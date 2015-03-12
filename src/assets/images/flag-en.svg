@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="250px" height="250px" viewBox="0 0 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>/Circle/US</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="125" cy="125" r="125"></circle>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="/Circle/US" sketch:type="MSArtboardGroup">
+            <g id="US-Round" sketch:type="MSLayerGroup">
+                <mask id="mask-2" sketch:name="Oval 3" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Oval-3" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <g id="Group" mask="url(#mask-2)" sketch:type="MSShapeGroup">
+                    <g transform="translate(-27.000000, 0.000000)">
+                        <rect id="Rectangle-1" fill="#EDF1F2" x="0" y="0" width="306" height="250" rx="5"></rect>
+                        <rect id="Rectangle-3" fill="#BE3B31" x="0" y="0" width="306" height="50.4032258"></rect>
+                        <rect id="Rectangle-3-copy" fill="#BE3B31" x="0" y="99.7983871" width="306" height="50.4032258"></rect>
+                        <rect id="Rectangle-3-copy-5" fill="#BE3B31" x="0" y="199.596774" width="306" height="50.4032258"></rect>
+                        <rect id="Rectangle-2" fill="#2F80B7" x="0" y="0" width="153.50495" height="150.201613"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

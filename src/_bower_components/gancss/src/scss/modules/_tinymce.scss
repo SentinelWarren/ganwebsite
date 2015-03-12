@@ -1,0 +1,219 @@
+.tiny-wrap {
+  .mce-toolbar-grp, .mce-edit-area, .mce-statusbar {
+    border: 1px solid $dark-grey !important;
+    border-width: 0 1px 1px 1px !important;
+  }
+  .mce-statusbar {
+    border-radius: 0 0 $border-radius $border-radius !important;
+  }
+  .mce-panel {
+    background: $light-grey;
+    border: none;
+    border-radius: 0;
+    border-top: 1px solid $dark-grey;
+  }
+  // Override font so we can use Source Sans
+  .mce-container,
+  .mce-container *,
+  .mce-widget,
+  .mce-widget * {
+    font-family: $sans;
+    color: $black;
+    // Reset for icon font
+    .mce-ico {
+      font-family: tinymce;
+    }
+  }
+  .mce-toolbar-grp {
+    padding: 10px 0 0 10px;
+  }
+  .mce-btn {
+    background: $white;
+    border: 1px solid $grey;
+    border-width: 1px 1px 1px 0 !important;
+    text-shadow: none !important;
+    box-shadow: none;
+    transition: 0.2s all;
+    color: $black;
+  }
+  .mce-listbox button {
+    padding-right: 0;
+    i {
+      text-shadow: none;
+    }
+    // Remove active state
+    button:active, button:focus {
+      box-shadow: none;
+      background: $grey;
+      border-color: $grey;
+    }
+    .mce-btn-group .mce-btn.mce-active,
+    .mce-btn-group .mce-btn.mce-active:hover,
+    .mce-btn-group .mce-btn:active {
+      box-shadow: none;
+      background: $grey;
+      border-color: $grey;
+    }
+  }
+  .mce-btn:hover,
+  .mce-btn:focus,
+  .mce-btn.mce-active,
+  .mce-btn.mce-active:hover,
+  .mce-btn-group .mce-btn.mce-active,
+  .mce-btn-group .mce-btn.mce-active:hover,
+  .mce-btn-group .mce-btn:active {
+    background: $grey;
+    //border: none
+    text-shadow: none;
+    box-shadow: none;
+  }
+  .mce-btn-group .mce-btn:hover,
+  .mce-btn-group .mce-btn:focus {
+    background: $grey;
+    border-color: $grey;
+    border-width: 1px 1px 1px 0;
+  }
+  .tiny-wrap .mce-colorbutton:hover .mce-open,
+  .mce-colorbutton:hover .mce-open {
+    border-left-color: $grey;
+    border-right-color: transparent;
+  }
+  .tiny-wrap .mce-btn-group .mce-first:hover {
+    border-width: 1px;
+  }
+  .mce-btn-group .mce-last {
+    border-right: 1px solid $grey;
+    &:hover {
+      border-right: 1px solid $grey;
+    }
+  }
+  .mce-btn-group .mce-first {
+    border-left: 1px solid $grey !important;
+    border-right: 1px solid $grey !important;
+    &:hover {
+      border-left: 1px solid $grey;
+      border-right: 1px solid $grey;
+    }
+  }
+  .mce-flow-layout-item {
+    margin: 0px 5px 10px 0px !important;
+  }
+  // Disabled
+  .mce-btn-group .mce-btn.mce-disabled,
+  .mce-btn-group .mce-btn.mce-disabled:hover {
+    box-shadow: none;
+    background: $light-grey;
+    border-color: $grey;
+  }
+}
+
+// Override for modal window
+.mce-container,
+.mce-container *,
+.mce-widget,
+.mce-widget * {
+  color: $black;
+}
+
+body {
+  #mce-modal-block, #mce-modal-block.mce-in {
+    background: rgba(54, 54, 54, 0.9);
+    opacity: 1;
+  }
+  .mce-window.mce-container *:not(.mce-ico) {
+    font-family: $sans !important;
+  }
+  .mce-btn i,
+  .mce-primary button {
+    text-shadow: none;
+    text-shadow: none;
+  }
+  .mce-window.mce-container {
+    box-shadow: none;
+    border-radius: $border-radius;
+    border: none;
+    .mce-open {
+      background: none;
+      height: 34px !important;
+      border: none;
+      text-shadow: none;
+      box-shadow: none;
+      padding-right: 2px;
+      button {
+        border-radius: 0 3px 3px 0;
+        height: 22px;
+        margin-left: -2px;
+        background: $dark-grey;
+        &:hover {
+          background: $darker-grey;
+        }
+      }
+      .mce-i-browse {
+        color: $white;
+      }
+    }
+    .mce-window-head {
+      background: $grey;
+      font-size: 18px;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 15px 15px 12px;
+      border-bottom: none;
+      border-radius: 3px 3px 0 0;
+      .mce-close {
+        right: 0;
+        top: 0;
+        color: $black;
+        padding: 14px 20px 13px;
+        transition: 0.3s all;
+        &:hover {
+          background: $grey;
+          border-radius: 0 $border-radius 0 0;
+        }
+      }
+    }
+    .mce-window-head .mce-title {
+      font-weight: normal;
+      color: $black;
+      text-align: center;
+    }
+    .mce-textbox {
+      background: $lighter-grey;
+      border: 1px solid $dark-grey;
+      height: 30px !important;
+      box-shadow: none;
+    }
+    .mce-foot {
+      background: $light-grey;
+      border: none;
+      box-shadow: inset 0 1px 0 $grey !important;
+      border-radius: 0 0 $border-radius $border-radius;
+      height: 65px !important;
+      padding-top: 10px;
+      box-shadow: none;
+      // Buttons
+      .mce-btn {
+        background: $dark-grey;
+        border: none;
+        box-shadow: none;
+        left: 15px !important;
+        padding: 2px;
+        button {
+          text-transform: uppercase;
+          color: $white;
+          font-weight: $bold;
+        }
+        &.mce-primary {
+          background: $green;
+          left: inherit !important;
+          right: 15px !important;
+          text-shadow: none;
+        }
+      }
+    }
+    #mce_27-action {
+      padding-top: 6px;
+      margin-left: -2px;
+    }
+  }
+}

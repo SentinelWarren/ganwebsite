@@ -1,0 +1,102 @@
+//
+// ALERTS
+//
+
+/*doc
+---
+title: Accordions
+name: accordions
+category: Modules
+---
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.
+
+```html_example
+<ul accordion="accordion">
+    <li class="accordion-item closed">
+        <h4>Accordion item</h4>
+    </li>
+    <li class="accordion-item">
+        <h4>Accordion item</h4>
+        <div>
+            <p>Accordion content goes here.</p>
+        </div>
+    </li>
+    <li class="accordion-item closed">
+        <h4>Accordion item</h4>
+    </li>
+    <li class="accordion-item closed">
+        <h4>Accordion item</h4>
+    </li>
+</ul>
+```
+
+*/
+
+ul[accordion] {
+    overflow: hidden;
+    border: 1px solid $grey;
+    //border-top: 1px solid $grey;
+    //border-bottom: 1px solid $grey;
+    border-radius: $border-radius;
+    //margin: 0 -40px 0;
+    line-height: inherit;
+
+    li {
+        overflow: hidden;
+        background: white;
+        border-bottom: 1px solid $grey;
+
+        h4 {
+            font-size: $font-size-medium;
+            font-weight: $semi-bold;
+            cursor: pointer;
+            background: $base-grey;
+            border-bottom: 1px solid $grey;
+            height: $height;
+            line-height: $height;
+            margin: 0;
+            padding: 0 15px;
+            position: relative;
+
+            &:after {
+                content: "\e6ca";
+                font-family: $icon;
+                position: absolute;
+                right: 15px;
+            }
+        }
+
+        &.closed {
+            height: $height;
+            line-height: $height;
+
+            h4 {
+                background: $lighter-grey;
+
+                &:after {
+                    content: "\e6cc";
+                }
+
+                &:hover {
+                    background: $light-grey;
+                }
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0;
+
+            h4 {
+                border-bottom: 0;
+            }
+        }
+
+        > div {
+            padding: $margin;
+        }
+    }
+}

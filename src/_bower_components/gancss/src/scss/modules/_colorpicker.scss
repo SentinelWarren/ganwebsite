@@ -1,0 +1,37 @@
+.sp-replacer.colorpicker-button {
+  background: $lighter-grey;
+  border: 1px solid $dark-grey;
+  border-radius: $border-radius;
+  padding: 4px 10px 4px 4px;
+  &:hover, &.sp-active {
+    border-color: $darker-grey;
+  }
+  &.sp-active {
+    border-radius: $border-radius $border-radius 0 0;
+    border-bottom: 0;
+    margin-bottom: 1px;
+  }
+  .sp-preview {
+    width: 45px;
+    margin-right: 5px;
+  }
+  .sp-dd {
+    padding: 3px 0 2px 6px;
+  }
+}
+
+.sp-container.colorpicker-selectcolor {
+  background: $lighter-grey;
+  border: 1px solid $darker-grey;
+  border-radius: 0 $border-radius $border-radius $border-radius;
+  .sp-input-container {
+    margin-bottom: -10px;
+    margin-top: 5px;
+  }
+  .sp-input {
+    background: white;
+  }
+  .sp-slider {
+    height: 5px;
+  }
+}

@@ -1,0 +1,344 @@
+@charset "utf-8";
+
+//
+// GANCSS
+// Import files as you need them
+//
+
+
+// -------------------------------------------------------------
+// # Tools
+// -------------------------------------------------------------
+
+@import "gancss/src/scss/tools/settings";
+@import "gancss/src/scss/tools/mixins";
+@import "gancss/src/scss/tools/helpers";
+
+
+// -------------------------------------------------------------
+// # Base
+// -------------------------------------------------------------
+
+@import "gancss/src/scss/base/normalize";
+@import "gancss/src/scss/base/global";
+@import "gancss/src/scss/base/typography";
+@import "gancss/src/scss/base/forms";
+@import "gancss/src/scss/base/tables";
+
+
+// -------------------------------------------------------------
+// # Layout
+// -------------------------------------------------------------
+
+// @import "gancss/src/scss/layout/header";
+// @import "gancss/src/scss/layout/footer";
+// @import "gancss/src/scss/layout/site";
+@import "gancss/src/scss/layout/grid";
+@import "gancss/src/scss/layout/boxes";
+
+
+// -------------------------------------------------------------
+// # Modules
+// -------------------------------------------------------------
+
+// @import "gancss/src/scss/modules/accordions";
+// @import "gancss/src/scss/modules/alerts";
+@import "gancss/src/scss/modules/buttons";
+// @import "gancss/src/scss/modules/calendar";
+// @import "gancss/src/scss/modules/colorpicker";
+// @import "gancss/src/scss/modules/dropdowns";
+// @import "gancss/src/scss/modules/icons";
+// @import "gancss/src/scss/modules/modals";
+// @import "gancss/src/scss/modules/multi-select";
+// @import "gancss/src/scss/modules/nav";
+// @import "gancss/src/scss/modules/notifications";
+// @import "gancss/src/scss/modules/pagination";
+// @import "gancss/src/scss/modules/progressbar";
+// @import "gancss/src/scss/modules/slider";
+// @import "gancss/src/scss/modules/tabs";
+// @import "gancss/src/scss/modules/tinymce";
+// @import "gancss/src/scss/modules/tooltips";
+
+
+body, html {
+    background: $white;
+    min-height: 100%;
+}
+
+.wrap {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+// Site header
+
+$header-height: 80px;
+
+.site-header {
+    background: $white;
+    height: $header-height;
+}
+
+.site-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 17px 30px 0;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: $bold;
+    line-height: $header-height;
+    color: $black;
+
+    img { width: 230px; }
+}
+
+.site-nav, .secondary-nav {
+
+    li {
+        display: inline-block;
+    }
+}
+
+.site-nav {
+    text-align: center;
+}
+
+.site-nav-link:not(.btn),
+.site-nav-link:not(.btn):visited {
+    color: $blue;
+    font-size: $font-size;
+    font-weight: $semi-bold;
+    height: $header-height;
+    line-height: $header-height;
+    display: inline-block;
+    padding: 0 25px;
+
+    &:hover { background: $light-grey; }
+}
+
+.secondary-nav {
+    position: absolute;
+    top: 0;
+    right: 40px;
+
+    .site-nav-link {
+        margin-left: 20px;
+        font-size: $font-size-medium;
+
+        &:not(.btn) {
+            padding: 0;
+            color: $dark-grey;
+
+            &:hover {
+                background: none;
+                color: $black;
+            }
+        }
+    }
+}
+
+.language-eng,
+.language-sv {
+    position: relative;
+    top: 4px;
+}
+
+
+// Hero
+
+.home-hero {
+    background: $blue;
+    background: linear-gradient(135deg, $blue 0%,$blue 50%, darken($blue, 2%) 50%, darken($blue, 2%) 100%);
+    background: url("http://static.pexels.com/wp-content/uploads/2014/07/evening-galaxy-mountains-1901.jpg");
+    background-size: cover;
+    min-height: 650px;
+    padding: 130px 0 0;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        background: rgba($blue, .6);
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+    }
+
+    .row, p, img { position: relative; z-index: 1; }
+
+    img {
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: 0 auto;
+        bottom: -230px;
+        width: 60%;
+    }
+}
+
+.btn.bordered.white {
+    color: $white;
+    box-shadow: inset 0 0 0 2px $white;
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px $green;
+        color: $green;
+    }
+}
+
+
+// Buttons
+.btn.large {
+    padding: 0 35px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.btn.bordered {
+    background: none;
+    color: $dark-grey;
+    box-shadow: inset 0 0 0 2px $grey;
+
+    &:hover {
+        box-shadow: inset 0 0 0 2px $green;
+        color: $green;
+    }
+}
+
+// Typography
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: $margin;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 24px;
+    font-weight: 400;
+}
+
+.site-heading {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.site-heading-ingress {
+    margin: $margin 0 $padding;
+}
+
+.text-blue {
+    color: $blue;
+}
+
+.text-light {
+    color: lighten($black, 25%);
+}
+
+.label {
+    font-weight: 600;
+    color: $blue;
+    position: relative;
+    margin-bottom: 50px;
+
+    &:after {
+        content: '';
+        background: $blue;
+        position: absolute;
+        top: 150%;
+        width: 30px;
+        height: 4px;
+        left: 50%;
+        border-radius: 4px;
+        margin-left: -15px;
+    }
+}
+
+
+//
+
+table {
+    width: 100%;
+    background: $white;
+    border: 1px solid $base-grey;
+}
+
+tr:nth-child(even) td {
+    background: $lighter-grey;
+}
+
+th {
+    text-align: left;
+    padding: 20px 40px;
+    font-size: 24px;
+    font-weight: $semi-bold;
+    border-bottom: 1px solid $base-grey;
+    border-right: 1px solid $base-grey;
+}
+
+td {
+    padding: 20px 40px;
+    border-bottom: 1px solid $base-grey;
+    border-right: 1px solid $base-grey;
+}
+
+
+// features
+
+.features {
+    padding: 120px 0;
+}
+
+.features-content {
+    margin-top: 60px;
+}
+
+.features-progress {
+    background: $base-grey;
+    width: 4px;
+    height: 350px;
+    margin: 0 auto;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -9px;
+        margin-left: -9px;
+        width: 18px;
+        height: 18px;
+        box-shadow: inset 0 0 0 4px $base-grey, 0 0 0 4px $white;
+        background: $white;
+        border-radius: 20px;
+    }
+}
+
+
+// Pricing
+
+.pricing {
+    padding: 120px 0;
+    background: $light-grey;
+}
+
+.box-header.large {
+    font-size: 20px;
+    line-height: 50px;
+    height: 50px;
+}
+
+
+// Customers
+
+.customers {
+    padding: 120px 0;
+}

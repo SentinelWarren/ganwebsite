@@ -1,2 +1,3 @@
-# ganwebsite
-Get a Newsletter's website. getanewsletter.com
+# Get a Newsletter's site.
+
+Build with jekyll and gulp.

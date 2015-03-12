@@ -1,0 +1,160 @@
+/*doc
+---
+title: Dropdowns
+name: dropdowns
+category: Modules
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<div tabindex="0" class="has-btn-dropdown">
+    <a class="btn primary">Dropdown</a>
+    <div class="btn-dropdown">
+        <a href="#">Dropdown option 1</a>
+        <a href="#">Dropdown option 2</a>
+        <a href="#">Dropdown option 3</a>
+    </div>
+</div>
+
+<div tabindex="0" class="has-btn-dropdown">
+    <a class="btn">Dropdown</a>
+    <div class="btn-dropdown">
+        <a href="#">Dropdown option 1</a>
+        <a href="#">Dropdown option 2</a>
+        <a href="#">Dropdown option 3</a>
+    </div>
+</div>
+```
+
+*/
+
+// Hover dropdowns
+.has-dropdown {
+    position: relative;
+
+    &:hover > ul {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    background: $blue;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 0 0 $border-radius $border-radius;
+
+    &.right {
+        right: 0;
+    }
+
+    li {
+        width: 100%;
+
+        a {
+            white-space: nowrap;
+            border-bottom: 1px solid $light-blue;
+            display: block;
+            padding: 0.6rem 1.3rem 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: $bold;
+            color: white;
+
+            &:hover {
+                background: $dark-blue;
+                color: white;
+            }
+        }
+    }
+
+    li:last-child a {
+        border-bottom: none;
+        border-radius: 0 0 $border-radius $border-radius;
+    }
+
+    li:first-child a {
+        border-top: 1px solid $light-blue;
+    }
+}
+
+// Click dropdowns
+.has-btn-dropdown {
+    position: relative;
+    outline: none;
+    display: inline-block;
+
+    > a:after {
+        content: "\e6ce";
+        font-family: $icon;
+        vertical-align: middle;
+        padding-left: 0.5rem;
+        display: inline-block;
+        margin-right: -0.5rem;
+        line-height: 15px;
+    }
+
+    &:focus {
+        pointer-events: none;
+
+        > a {
+
+            &:after {
+                content: "\e6cf";
+            }
+        }
+
+        .btn-dropdown {
+            display: block;
+            pointer-events: auto;
+        }
+    }
+}
+
+.has-btn-dropdown + .has-btn-dropdown { margin-left: $margin; }
+
+.btn-dropdown {
+    display: none;
+    top: 120%;
+    right: 0;
+    background: $lighter-grey;
+    border: 1px solid $grey;
+    border-radius: $border-radius;
+    z-index: $z-small;
+    text-align: left;
+    box-shadow: $box-shadow;
+    @include cssTriangle(6px, 1px, $grey, top, 85%, $lighter-grey);
+    position: absolute;
+
+    a {
+        display: block;
+        white-space: nowrap;
+        width: 100%;
+        font-size: $font-size-medium;
+        font-weight: $semi-bold;
+        padding: 0 25px 0;
+        height: $height;
+        line-height: $height;
+        border-bottom: 1px solid $grey;
+
+        &:hover { background: $light-grey; }
+
+        &:first-child { border-radius: $border-radius $border-radius 0 0; }
+
+        &:last-child {
+            border-bottom: none;
+            border-radius: 0 0 $border-radius $border-radius;
+        }
+    }
+
+    &:focus {
+        display: block;
+        pointer-events: auto;
+    }
+}

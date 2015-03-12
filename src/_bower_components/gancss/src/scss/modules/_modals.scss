@@ -1,0 +1,143 @@
+//
+// Modals
+//
+
+/*doc
+---
+title: Modals
+name: modals
+category: Modules
+---
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.
+
+```html_example
+<button class="btn primary modal-trigger">Show Modal</button>
+
+<div class="modal">
+        <div class="modal-content">
+                <h2 class="modal-header">Modal</h2>
+                <div class="row">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="modal-footer">Footer</div>
+        </div>
+</div>
+```
+
+*/
+
+.modal {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    width: 46%;
+    height: auto;
+    margin-left: -23%;
+    z-index: $z-large;
+    visibility: hidden;
+
+    @include bp(large) {
+        width: 740px;
+        margin-left: -370px;
+    }
+
+    @include bp(medium) {
+        width: 70%;
+        margin-left: -35%;
+    }
+
+    @include bp(small) {
+        width: 90%;
+        margin-left: -45%;
+        top: 3%;
+    }
+
+    &.modal-open {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.modal-large {
+        width: 60%;
+        margin-left: -30%;
+    }
+}
+
+body:after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: $z-medium;
+    background: rgba(#363636, 0.9);
+    opacity: 0;
+    visibility: hidden;
+}
+
+// Remove background scroll when modal is active
+.modal-overlay {
+    overflow: hidden;
+}
+
+.modal-overlay:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: $white;
+    position: relative;
+    border-radius: 5px;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    opacity: 0;
+}
+
+.modal-open .modal-content {
+    opacity: 1;
+}
+
+.modal-header {
+    background: $dark-grey;
+    color: white;
+    margin: -1rem -2.5rem 2rem;
+    padding: 0.7rem 2rem 0.6rem;
+    font-size: 1rem;
+    font-weight: $bold;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    border-radius: $border-radius $border-radius 0 0;
+
+    a {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        padding: 0.9rem;
+        color: $white;
+        border-radius: 0 2px 0 0;
+        transition: 0.2s background;
+
+        &:hover {
+            background: $darker-grey;
+            color: $white;
+        }
+    }
+}
+
+.modal-footer {
+    background: $light-grey;
+    border-top: 1px solid $grey;
+    margin: 0rem -2.5rem -1rem;
+    padding: 1rem;
+    border-radius: 0 0 $border-radius $border-radius;
+}

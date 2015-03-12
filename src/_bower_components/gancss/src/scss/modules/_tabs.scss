@@ -1,0 +1,54 @@
+//
+// Tabs
+//
+
+
+/*doc
+---
+title: Tabs
+name: tabs
+category: Modules
+---
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.
+
+## Input fields
+
+```html_example
+<ul class="tab-container">
+    <li><a href="#">Tab 1</a></li>
+    <li><a href="#">Tab 1</a></li>
+</ul>
+```
+*/
+
+
+.tab-container {
+  margin: 0 0 1.5rem;
+  background: white;
+  border: 1px solid $dark-grey;
+  border-radius: $border-radius;
+  li {
+    float: left;
+    width: 50%;
+  }
+  li a {
+    padding: 0.55rem 0 0.45rem;
+    margin: 0;
+    font-weight: $bold;
+    color: $dark-grey;
+    text-align: center;
+    display: block;
+    &:hover {
+      background: $grey;
+      color: $black;
+    }
+    &.tabactive {
+      background: $dark-grey;
+      color: white;
+    }
+  }
+}

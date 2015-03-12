@@ -1,0 +1,77 @@
+//
+// Tooltips
+//
+
+.has-tooltip, .form-tooltip {
+    position: relative;
+    line-height: 1;
+}
+
+.form-tooltip a span[class^="icon-"] {
+    font-size: 12px;
+    color: $grey;
+    margin-left: 5px;
+    vertical-align: text-bottom;
+    &:hover {
+        color: $dark-grey;
+    }
+}
+
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    background: $black;
+    bottom: 115%;
+    max-width: 70%;
+    padding: 12px $margin;
+    font-size: $font-size-small;
+    line-height: 1.3;
+    color: $white;
+    border-radius: $border-radius;
+    margin-left: -24px;
+    z-index: $z-small;
+
+    &:after {
+        top: 99%;
+        left: 50%;
+        border: solid transparent;
+        content: "";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(68, 68, 68, 0);
+        border-top-color: $black;
+        border-width: 6px;
+        margin-left: -6px;
+    }
+}
+
+// Position tooltip arrow for form-tooltip
+.form-tooltip .tooltip:after {
+    left: 18px;
+}
+
+// tooltips for labels, can only be on one row
+.has-tooltip .tooltip {
+    bottom: 145%;
+    left: 49%;
+    max-width: none;
+    right: inherit;
+    transform: translate(-49%, 0);
+    margin: 0;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.has-tooltip:hover .tooltip, .form-tooltip a:hover .tooltip,
+.has-tooltip:focus .tooltip, .form-tooltip a:focus .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
+
+.has-tooltip.fixed-tooltip .tooltip {
+    white-space: inherit;
+    min-width: 300px;
+}

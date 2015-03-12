@@ -1,0 +1,490 @@
+//
+// FORMS
+//
+
+
+// # Text inputs
+// # Selects
+// # Labels
+// # Checkboxes and radios
+// # File upload
+// # Form validation
+// # Pre/Postfix
+// # Documentation
+
+
+// -------------------------------------------------------------
+// # Text inputs
+// -------------------------------------------------------------
+
+/*doc
+---
+parent: forms
+name: Parent
+title: Forms
+---
+
+HEJHEJ!!
+
+*/
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="number"],
+textarea {
+    background: $lighter-grey;
+    border: 1px solid $grey;
+    display: block;
+    width: 100%;
+    height: $height;
+    line-height: $height;
+    margin-bottom: 16px;
+    padding: 0 13px;
+    border-radius: $border-radius;
+    font-size: $font-size-medium;
+    box-shadow: inset $box-shadow;
+
+    // States
+    &:hover {
+        border: 1px solid $dark-grey;
+    }
+
+    &:focus {
+        background: $white;
+        border: 1px solid $blue;
+        outline: 0;
+    }
+
+    // Modifiers
+    &.error {
+        border: 1px solid $red;
+
+        &:focus {
+            border: 1px solid $red;
+        }
+    }
+
+    &.small {
+        height: $height-small;
+    }
+}
+
+textarea {
+    min-height: 150px;
+}
+
+
+
+
+
+// -------------------------------------------------------------
+// # Selects
+// -------------------------------------------------------------
+
+select, .choose-date {
+    display: block;
+    width: 100%;
+    height: $height;
+    line-height: $height;
+    -webkit-appearance: none !important;
+    background: $lighter-grey url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) 99% center no-repeat;
+    border: 1px solid $grey;
+    margin-bottom: $margin;
+    padding: 0 $padding 0 13px;
+    font-size: $font-size-medium;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    // Hack to remove native arrow in FF
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+
+    // States
+    &:hover {
+        border: 1px solid $dark-grey;
+    }
+
+    &:focus, &:active {
+        outline: 0;
+        border: 1px solid $light-blue;
+    }
+    &.small {
+        padding: 0.3rem 3rem 0.3rem 0.8rem;
+    }
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+// -------------------------------------------------------------
+// # Labels
+// -------------------------------------------------------------
+
+label {
+    display: inline-block;
+    font-size: $font-size-medium;
+    line-height: 1.6;
+}
+
+
+// -------------------------------------------------------------
+// # Checkboxes and radios
+// -------------------------------------------------------------
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+
+    // States
+    &:hover {
+        background: $dark-grey;
+    }
+}
+
+// Radio and checkbox inside label
+label.radio,
+label.checkbox {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        position: absolute;
+        left: 1px;
+        margin-top: 4px;
+    }
+
+    input[type="checkbox"] { margin-top: 5px; }
+}
+
+label.radio + label.radio,
+label.checkbox + label.checkbox {
+    margin-left: 20px;
+}
+
+
+// -------------------------------------------------------------
+// # File upload
+// -------------------------------------------------------------
+
+.file-upload-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    font-size: 43px;
+    direction: ltr;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    width: 200%;
+    cursor: pointer;
+}
+
+
+// -------------------------------------------------------------
+// # Form validation
+// -------------------------------------------------------------
+
+span.error {
+    color: $red;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    margin-top: -0.8rem;
+    margin-bottom: 0.8rem;
+
+    &.small {
+        margin-top: -0.1rem;
+    }
+}
+
+// Position icons inside input
+.input-wrap {
+    position: relative;
+    input[type="email"].ng-valid,
+    input[type="text"].ng-valid,
+    input[type="password"].ng-valid,
+    input[type="url"].ng-valid {
+        // border: 1px solid $green
+        position: relative;
+    }
+    span.valid, span.invalid, span.append-icon {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.9rem;
+        color: $green;
+        &.invalid {
+            color: $red;
+        }
+    }
+    .has-icon {
+        padding: 0.6rem 0.5rem 0.5rem 2.4rem;
+    }
+    span.prepend-icon {
+        position: absolute;
+        top: 0.75rem;
+        left: 0.9rem;
+    }
+    span.append-icon {
+        position: absolute;
+        top: 0.75rem;
+        right: 0.9rem;
+    }
+}
+
+
+// -------------------------------------------------------------
+// # Pre/Postfix
+// -------------------------------------------------------------
+
+.append-btn {
+    display: table;
+    margin-bottom: 0.5rem;
+    position: relative;
+    width: 100%;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    textarea {
+        margin-bottom: 0;
+        border-radius: $border-radius 0 0 $border-radius;
+        display: table-cell;
+        position: relative;
+        margin-bottom: 0;
+
+        &.small {
+            height: 30px;
+        }
+    }
+    .btn {
+        display: table-cell !important;
+        border-radius: 0 $border-radius $border-radius 0;
+        width: 1%;
+        position: relative;
+    }
+}
+
+
+// -------------------------------------------------------------
+// # Layout
+// -------------------------------------------------------------
+
+.border-with-bg {
+    input, select {
+        background-color: $white;
+    }
+    .legend h3 strong {
+        background: $lighter-grey;
+    }
+}
+
+.legend {
+    border-bottom: 1px solid $base-grey;
+    margin: ($margin*2) (-$padding);
+
+    h3 {
+        margin: 0 2.5rem -0.6rem;
+
+        strong {
+            background: $white;
+            display: inline-block;
+            padding: 0 0.5rem;
+            font-size: 1rem;
+            font-weight: $semi-bold;
+        }
+    }
+}
+
+
+// -------------------------------------------------------------
+// # Documentation
+// -------------------------------------------------------------
+
+/*doc
+---
+title: Forms
+name: forms
+category: Base
+---
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.
+
+## Input fields
+
+```html_example
+<div class="form-tooltip clearfix">
+    <label class="left" for="email">Email*</label>
+    <a href="#" tabindex="-1">
+        <span class="icon-info2"></span>
+        <span class="tooltip">Write the confirmation mail below.</span>
+    </a>
+</div>
+<input type="text" id="email" />
+
+<div class="legend">
+    <h3>
+        <strong>Divider</strong>
+    </h3>
+</div>
+
+<p class="small light-text">Choose if you want the fields for first name visible. The e-mail field is mandatory.</p>
+
+<label for="text_area">Text Area</label>
+<textarea id="text_area"></textarea>
+
+<div class="legend">
+    <h3>
+        <strong>Form settings</strong>
+    </h3>
+</div>
+
+<p class="small light-text">Use a custom landing page and write a custom text for the submit button.</p>
+
+<div class="row">
+    <div class="col-6">
+        <label for="next_url">Next URL</label>
+        <input type="text" id="next_url" />
+    </div>
+    <div class="col-6">
+        <label for="button_text">Button text</label>
+        <input type="text" id="button_text" />
+    </div>
+</div>
+
+
+<div class="row text-right">
+    <input class="btn primary" type="submit" value="Submit">
+</div>
+
+```
+
+## Selects
+
+```html_example
+<label for="country">Country</label>
+<select id="country">
+    <optgroup label="Option Group 1">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="Option Group 2">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3" disabled>Disabled Option</option>
+    </optgroup>
+</select>
+```
+
+## Checkboxes and radio buttons
+
+```html_example
+<div class="row">
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+    <label class="radio">
+        <input type="radio" name="radio" value="2" /> Radio 2
+    </label>
+    <label class="radio">
+        <input type="radio" name="radio" value="3" /> Radio 3
+    </label>
+</div>
+
+<div class="row">
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="2" /> Checkbox 2
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="3" /> Checkbox 3
+    </label>
+</div>
+
+<div>
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div>
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div class="row">
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+</div>
+
+<div>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+</div>
+
+<div class="row">
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+</div>
+```
+
+## File upload
+
+```html_example
+<div class="file-upload-wrap btn primary">
+    <input type="file" id="file" class="file-upload-input">
+    <span>File upload</span>
+</div>
+```
+
+## Append button
+
+```html_example
+<div class="append-btn">
+    <input type="text" />
+    <a class="btn primary" href="#">Primary</a>
+</div>
+```
+
+## Layout
+
+```html_example
+<div class="legend">
+    <h3>
+        <strong>Divider</strong>
+    </h3>
+</div>
+```
+
+*/

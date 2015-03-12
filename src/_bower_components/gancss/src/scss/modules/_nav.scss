@@ -1,0 +1,71 @@
+/*doc
+---
+title: Nav
+name: nav
+category: Modules
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element.
+
+```html_example
+<button class="btn primary">Primary</button>
+<a class="btn" href="#">Default</a>
+```
+
+## Button sizes
+
+There are two sizes for buttons: normal and small. Simply apply the size
+modifier class for the desired size.
+There is also an additional modifier that will make the button take the
+full width of the container. It may be used with the any of the button
+size and style modifiers.
+
+```html_example
+<a class="btn primary" href="#">Primary normal</a>
+<a class="btn" href="#">Default normal</a>
+<a class="btn primary small" href="#">Primary small</a>
+<a class="btn small" href="#">Default small</a>
+```
+
+## Button groups
+
+Button groups is used to add some extra spacing between buttons on the same `.row`.
+
+```html_example
+<a class="btn primary" href="#">Primary normal</a>
+<a class="btn" href="#">Default normal</a>
+<a class="btn primary small" href="#">Primary small</a>
+<a class="btn small" href="#">Default small</a>
+```
+
+*/
+
+
+// Sidebar navigation
+.sidebar-nav {
+
+    margin: 0;
+
+    a {
+        display: block;
+        border-bottom: 1px solid $base-grey;
+        padding: 0.7rem 0 0.6rem;
+        font-size: $font-size-medium;
+        font-weight: $semi-bold;
+        position: relative;
+        
+        // &:hover { background: $base-grey; }
+    }
+    li.active {
+        a {
+            margin: 0 -3.01rem;
+            background: #3d7ba4;
+            padding-left: 3rem;
+            color: #fff;
+            margin-top: -1px;
+            border-top: 1px solid #3d7ba4;
+            border-bottom: 1px solid #3d7ba4;
+        }
+    }
+}

@@ -1,0 +1,164 @@
+//
+// FORMS
+//
+
+
+// # Boxes
+// # Box headers
+// # Row boxes
+// # Documentation
+
+
+// Local vars
+$boxes-margin: -(($margin*2) + 1px);
+
+
+// -------------------------------------------------------------
+// # Boxes
+// -------------------------------------------------------------
+
+[class*='col-'].box {
+    background: $white;
+    padding: $margin*2 $margin*2 $margin;
+    border-radius: $border-radius;
+
+    &.border-with-bg {
+        background: $lighter-grey;
+        border: 1px solid $grey;
+    }
+}
+
+
+// -------------------------------------------------------------
+// # Box headers
+// -------------------------------------------------------------
+
+.box-header {
+    background: $blue;
+    color: $white;
+    margin: $boxes-margin $boxes-margin $margin*1.5;
+    padding: 0 $margin*2;
+    height: $height;
+    line-height: $height;
+    font-size: $font-size;
+    font-weight: $semi-bold;
+    border-radius: $border-radius $border-radius 0 0;
+
+    &.light {
+        background: $dark-grey;
+        color: $white;
+    }
+
+    &.muted {
+        background: $base-grey;
+        color: $black;
+        border: 1px solid $grey;
+    }
+
+    &.error {
+        background: $red;
+    }
+
+    span {
+        font-size: 1.2rem;
+        vertical-align: sub;
+        display: inline-block;
+        margin-right: 0.4rem;
+    }
+}
+
+
+// -------------------------------------------------------------
+// # Row boxes
+// -------------------------------------------------------------
+
+.row.box {
+    background: $white;
+    padding: 2rem 3rem;
+    position: relative;
+
+    &.error {
+        background: $light-red;
+    }
+}
+
+[class*='col-'].center-box {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.module {
+    min-height: 310px;
+}
+
+
+// -------------------------------------------------------------
+// # Documentation
+// -------------------------------------------------------------
+
+/*doc
+---
+title: Boxes
+name: boxes
+category: Layout
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<div class="row btn-group-connected text-center">
+    <input type="radio" id="monthly" name="subscription_period" value="1">
+    <label for="monthly" class="btn small muted">Pay monthly</label>
+    <input type="radio" id="yearly" name="subscription_period" value="12">
+    <label for="yearly" class="btn small muted">Pay yearly</label>
+</div>
+
+<div class="row">
+    <div class="col-4 box border-with-bg text-center">
+        <h4 class="box-header">Bronze</h4>
+        <p class="small no-mar">Mails/month</p>
+        <h1 class="no-mar">10 000</h1>
+        <p class="small">99 SEK/month</p>
+        <p class="no-mar">
+            <a href="#" class="btn primary small">Choose</a>
+        </p>
+    </div>
+    <div class="col-4 box border-with-bg text-center">
+        <h4 class="box-header">Silver</h4>
+        <p class="small no-mar">Mails/month</p>
+        <h1 class="no-mar">25 000</h1>
+        <p class="small">239 SEK/month</p>
+        <p class="no-mar">
+            <a href="#" class="btn primary small">Choose</a>
+        </p>
+    </div>
+    <div class="col-4 box border-with-bg text-center">
+        <h4 class="box-header">Gold</h4>
+        <p class="small no-mar">Mails/month</p>
+        <h1 class="no-mar">50 000</h1>
+        <p class="small">449 SEK/month</p>
+        <p class="no-mar">
+            <a href="#" class="btn primary small">Choose</a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 box border-with-bg">
+        <h4 class="box-header light">Box header</h4>
+        <p>Box with border and bg</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 box border-with-bg">
+        <h4 class="box-header error">Box header</h4>
+        <p>Box with border and bg</p>
+    </div>
+</div>
+```
+
+*/

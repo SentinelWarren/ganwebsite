@@ -1,0 +1,164 @@
+/*doc
+---
+title: Multiselect
+name: multiselect
+category: Modules
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<div searchable-dropdown>
+    <div class="display-value">
+        <span class="icon-arrow-down4"></span>
+    </div>
+    <ul>
+        <li>
+            <i class="icon-arrow-up3"></i>
+        </li>
+        <li class="input">
+            <div class="input-wrap input-wrap-small">
+                <input type="text" class="has-icon no-mar search small">
+                <span class="icon-search prepend-icon"></span>
+                <span class="append-icon">
+                    <a class="icon-cross ng-hide"></a>
+                </span>
+            </div>
+        </li>
+        <li>Multiselect option 1</li>
+        <li class="selected">
+            <span>Multiselect option 2</span>
+            <span style="color: #999;" class="right">1 prenumeranter</span>
+        </li>
+        <li>Multiselect option 3</li>
+        <li>Multiselect option 4</li>
+        <li>Multiselect option 5</li>
+        <li class="show-more-lists">
+            <a href="#">Show more</a>
+        </li>
+    </ul>
+</div>
+```
+
+*/
+
+
+// Move to components when cleaning code
+[searchable-dropdown] {
+    position: relative;
+}
+
+[searchable-dropdown] .display-value {
+    border-radius: $border-radius;
+    border: 1px solid $grey;
+    padding: 0 13px;
+    margin-bottom: $margin;
+    background: $lighter-grey;
+    font-size: $font-size-medium;
+    height: $height;
+    box-shadow: $box-shadow;
+
+    &:hover {
+        border: 1px solid $dark-grey;
+    }
+
+    .icon-arrow-down4 {
+        position: absolute;
+        top: 36%;
+        right: 1rem;
+    }
+}
+
+[searchable-dropdown] ul {
+    position: absolute;
+    background: $white;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+    border: 1px solid $grey;
+    margin: 0;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    .icon-arrow-up3 {
+        position: absolute;
+        top: 36%;
+        right: 1rem;
+    }
+}
+
+[searchable-dropdown] ul li {
+    padding: 0.2rem 1rem;
+    font-size: 0.9rem;
+    position: relative;
+
+    &.input {
+        padding: 1rem;
+        border-top: 1px solid $grey;
+    }
+
+    &:first-child {
+        padding: 0.45rem 1rem;
+        height: 38px;
+
+        span {
+            background: $dark-grey;
+            color: white;
+            padding: 3px 7px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            display: inline-block;
+            border-radius: 3px;
+
+            &:after {
+                content: "\e678";
+                font-family: $icon;
+                margin-left: 6px;
+                position: relative;
+                top: 0.1rem;
+            }
+        }
+    }
+
+    &.result-item {
+        cursor: pointer;
+    }
+
+    &.no-results {
+        padding: 1rem;
+        border-radius: 0 0 3px 3px;
+        border-bottom: none;
+    }
+
+    &.show-more-lists {
+        border-bottom: 0;
+        margin-top: 0.5rem;
+    }
+}
+
+[searchable-dropdown] ul li.selected {
+    background: $base-grey;
+}
+
+// Move to forms when you have time
+.input-wrap-small span.prepend-icon {
+    position: absolute;
+    top: 0.56rem;
+    left: 0.7rem;
+}
+
+.input-wrap-small input[type="text"] {
+    padding-left: 2rem;
+}
+
+.input-wrap-small span.append-icon {
+    top: 0.4rem;
+    right: 0.8rem;
+}
+
+// Make the dropdown white in grey boxes
+[searchable-dropdown].send-search ul, [searchable-dropdown].send-search .display-value {
+    background: white;
+}

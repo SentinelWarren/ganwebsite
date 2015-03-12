@@ -1,0 +1,1679 @@
+/*doc
+---
+title: Helpers
+name: helpers
+category: Tools
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<button class="btn primary">Primary</button>
+<a class="btn" href="#">Default</a>
+```
+
+*/
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+.clearfix:after {
+  clear: both;
+  *zoom: 1; }
+
+.no-mar {
+  margin: 0 !important; }
+
+.pos-rel {
+  position: relative; }
+
+.no-float {
+  float: none !important; }
+
+.left {
+  float: left !important; }
+
+.right {
+  float: right !important; }
+
+.text-left {
+  text-align: left !important; }
+
+.text-right {
+  text-align: right !important; }
+
+.text-center {
+  text-align: center !important; }
+
+.valign-middle {
+  vertical-align: middle; }
+
+.valign-top {
+  vertical-align: top; }
+
+.disabled {
+  opacity: 0.5; }
+  .disabled:hover, .disabled a:hover {
+    cursor: default !important; }
+
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
+
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio, canvas, video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button, input, select, textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button, input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
+
+.k-calendar * {
+  box-sizing: content-box; }
+
+html, body {
+  background: #e5e9ec;
+  -webkit-transition: 0.3s 0.1s opacity;
+          transition: 0.3s 0.1s opacity;
+  opacity: 1;
+  height: 100%;
+  font-size: 16px;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #444444;
+  min-width: 930px; }
+
+[ng-cloak] {
+  opacity: 0;
+  display: block !important; }
+  [ng-cloak] .site-header {
+    -webkit-transform: translate3d(0, -110%, 0);
+            transform: translate3d(0, -110%, 0); }
+
+.site-wrap {
+  min-height: 100%;
+  margin-bottom: -49px; }
+  .site-wrap:after {
+    content: "";
+    display: block; }
+  .site-wrap.authenticated {
+    margin-bottom: -338px; }
+
+img {
+  max-width: 100%;
+  height: auto !important; }
+  img.with-border {
+    border-radius: 3px;
+    border: 1px solid #c8d0d6; }
+
+iframe {
+  border: none;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block; }
+
+@-moz-document url-prefix() {
+  img {
+    width: 100%; } }
+
+ul, ol {
+  padding: 0;
+  line-height: 1.6; }
+
+ul {
+  list-style: none; }
+  ul.with-bullet {
+    margin-bottom: 1.5rem; }
+    ul.with-bullet li {
+      list-style: circle;
+      list-style-position: inside;
+      margin-bottom: 0.3rem; }
+  ul.with-btmborder li {
+    border-bottom: 1px solid #e5e9ec;
+    padding: 6px 0; }
+    ul.with-btmborder li:last-child {
+      border-bottom: none;
+      padding-bottom: 0; }
+    ul.with-btmborder li:first-child {
+      padding-top: 0; }
+
+ol {
+  list-style-position: inside; }
+
+hr {
+  border-top: none;
+  border-bottom: 1px solid #e5e9ec;
+  margin: 1.5rem 0;
+  border-left: none;
+  border-right: none; }
+  hr.small {
+    margin: 0.5rem 0; }
+  hr.sidebar-hr {
+    margin: 1.5rem -3rem; }
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden; }
+
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+.modal.preview-modal {
+  width: 700px;
+  margin-left: -350px;
+  top: 1%;
+  -webkit-transition: 0.2s all;
+          transition: 0.2s all; }
+  .modal.preview-modal.previewmobile {
+    width: 400px !important;
+    margin-left: -200px; }
+  .modal.preview-modal .tab-container {
+    margin: 0 -2.5rem;
+    border-radius: 0;
+    border: none;
+    background: #f4f5f7;
+    border-bottom: 1px solid #c8d0d6; }
+    .modal.preview-modal .tab-container li a.tabactive {
+      background: #c8d0d6;
+      color: #444444; }
+    .modal.preview-modal .tab-container li a:not(.tabactive):hover {
+      background: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.2; }
+
+h1 {
+  font-size: 32px; }
+
+h2 {
+  font-size: 26px; }
+
+h3 {
+  font-size: 22px; }
+
+h4 {
+  font-size: 18px; }
+
+h5 {
+  font-size: 16px;
+  text-transform: uppercase; }
+
+p {
+  font-weight: 400;
+  margin: 0 0 16px 0; }
+
+a, a:visited {
+  text-decoration: none;
+  color: #3d7ba4;
+  cursor: pointer; }
+  a:hover, a:visited:hover {
+    color: #21435a; }
+
+b, strong {
+  font-weight: 600; }
+
+pre {
+  font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
+  word-break: break-all;
+  border: 1px solid #c8d0d6;
+  padding: 16px;
+  background: #fafafb;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 16px; }
+
+.icon-mar {
+  margin-top: 0.15rem; }
+
+.icon-in-text {
+  line-height: 1.4;
+  display: inline-block;
+  vertical-align: bottom; }
+
+.icon-error {
+  color: #df6565; }
+
+.icon-success {
+  color: #3bb279; }
+
+.icon-pending {
+  color: #cfc823; }
+
+.underline {
+  border-bottom: 1px dotted #5495c0; }
+  .underline:hover {
+    border-bottom: 1px dotted #3d7ba4; }
+
+.icon {
+  font-family: "icons";
+  font-size: 1rem; }
+
+code {
+  font-size: 14px;
+  padding: 0 3px;
+  background: #f4f5f7;
+  border-radius: 3px;
+  font-family: "Source Code Pro", "Monaco", "Courier New", monospace;
+  white-space: nowrap; }
+
+small, .small {
+  font-size: 0.9rem; }
+
+.ingress {
+  font-size: 20.8px; }
+
+.label {
+  font-size: 0.9rem;
+  text-transform: uppercase; }
+
+.light-text {
+  color: #A4AAAE; }
+
+.lowercase {
+  text-transform: none; }
+
+a.delete, a.delete:visited {
+  color: #df6565; }
+
+/*doc
+---
+title: Typography
+name: typography
+category: Base
+---
+
+These are the heading sizes that you can use site wide.
+
+```html_example_table
+<h1>Heading 1 32px</h1>
+<h2>Heading 2 26px</h2>
+<h3>Heading 3 22px</h3>
+<h4>Heading 4 18px</h4>
+<h5>Heading 5 16px</h5>
+<p>This is an example of our base font style 16px. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+```
+
+*/
+/*doc
+---
+parent: forms
+name: Parent
+title: Forms
+---
+
+HEJHEJ!!
+
+*/
+input[type="text"], input[type="email"], input[type="password"], input[type="url"], input[type="number"], textarea {
+  background: #fafafb;
+  border: 1px solid #c8d0d6;
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 16px;
+  padding: 0 13px;
+  border-radius: 3px;
+  font-size: 14px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07); }
+  input[type="text"]:hover, input[type="email"]:hover, input[type="password"]:hover, input[type="url"]:hover, input[type="number"]:hover, textarea:hover {
+    border: 1px solid #7e92a1; }
+  input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus, input[type="url"]:focus, input[type="number"]:focus, textarea:focus {
+    background: white;
+    border: 1px solid #3d7ba4;
+    outline: 0; }
+  input[type="text"].error, input[type="email"].error, input[type="password"].error, input[type="url"].error, input[type="number"].error, textarea.error {
+    border: 1px solid #df6565; }
+    input[type="text"].error:focus, input[type="email"].error:focus, input[type="password"].error:focus, input[type="url"].error:focus, input[type="number"].error:focus, textarea.error:focus {
+      border: 1px solid #df6565; }
+  input[type="text"].small, input[type="email"].small, input[type="password"].small, input[type="url"].small, input[type="number"].small, textarea.small {
+    height: 30px; }
+
+textarea {
+  min-height: 150px; }
+
+select, .choose-date {
+  display: block;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  -webkit-appearance: none !important;
+  background: #fafafb url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) 99% center no-repeat;
+  border: 1px solid #c8d0d6;
+  margin-bottom: 16px;
+  padding: 0 50px 0 13px;
+  font-size: 14px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  -moz-appearance: none;
+  text-indent: 0.01px;
+  text-overflow: ""; }
+  select:hover, .choose-date:hover {
+    border: 1px solid #7e92a1; }
+  select:focus, select:active, .choose-date:focus, .choose-date:active {
+    outline: 0;
+    border: 1px solid #5495c0; }
+  select.small, .choose-date.small {
+    padding: 0.3rem 3rem 0.3rem 0.8rem; }
+
+select::-ms-expand {
+  display: none; }
+
+label {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1.6; }
+
+input[type="checkbox"], input[type="radio"] {
+  cursor: pointer; }
+  input[type="checkbox"]:hover, input[type="radio"]:hover {
+    background: #7e92a1; }
+
+label.radio, label.checkbox {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer; }
+  label.radio input[type="checkbox"], label.radio input[type="radio"], label.checkbox input[type="checkbox"], label.checkbox input[type="radio"] {
+    position: absolute;
+    left: 1px;
+    margin-top: 4px; }
+  label.radio input[type="checkbox"], label.checkbox input[type="checkbox"] {
+    margin-top: 5px; }
+
+label.radio + label.radio, label.checkbox + label.checkbox {
+  margin-left: 20px; }
+
+.file-upload-wrap {
+  position: relative;
+  overflow: hidden; }
+
+.file-upload-input {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  font-size: 43px;
+  direction: ltr;
+  cursor: pointer;
+  height: 40px;
+  line-height: 40px;
+  width: 200%;
+  cursor: pointer; }
+
+span.error {
+  color: #df6565;
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  margin-top: -0.8rem;
+  margin-bottom: 0.8rem; }
+  span.error.small {
+    margin-top: -0.1rem; }
+
+.input-wrap {
+  position: relative; }
+  .input-wrap input[type="email"].ng-valid, .input-wrap input[type="text"].ng-valid, .input-wrap input[type="password"].ng-valid, .input-wrap input[type="url"].ng-valid {
+    position: relative; }
+  .input-wrap span.valid, .input-wrap span.invalid, .input-wrap span.append-icon {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.9rem;
+    color: #3bb279; }
+    .input-wrap span.valid.invalid, .input-wrap span.invalid.invalid, .input-wrap span.append-icon.invalid {
+      color: #df6565; }
+  .input-wrap .has-icon {
+    padding: 0.6rem 0.5rem 0.5rem 2.4rem; }
+  .input-wrap span.prepend-icon {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.9rem; }
+  .input-wrap span.append-icon {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.9rem; }
+
+.append-btn {
+  display: table;
+  margin-bottom: 0.5rem;
+  position: relative;
+  width: 100%; }
+  .append-btn input[type="text"], .append-btn input[type="email"], .append-btn input[type="password"], .append-btn input[type="url"], .append-btn textarea {
+    margin-bottom: 0;
+    border-radius: 3px 0 0 3px;
+    display: table-cell;
+    position: relative;
+    margin-bottom: 0; }
+    .append-btn input[type="text"].small, .append-btn input[type="email"].small, .append-btn input[type="password"].small, .append-btn input[type="url"].small, .append-btn textarea.small {
+      height: 30px; }
+  .append-btn .btn {
+    display: table-cell !important;
+    border-radius: 0 3px 3px 0;
+    width: 1%;
+    position: relative; }
+
+.border-with-bg input, .border-with-bg select {
+  background-color: white; }
+.border-with-bg .legend h3 strong {
+  background: #fafafb; }
+
+.legend {
+  border-bottom: 1px solid #e5e9ec;
+  margin: 32px -50px; }
+  .legend h3 {
+    margin: 0 2.5rem -0.6rem; }
+    .legend h3 strong {
+      background: white;
+      display: inline-block;
+      padding: 0 0.5rem;
+      font-size: 1rem;
+      font-weight: 600; }
+
+/*doc
+---
+title: Forms
+name: forms
+category: Base
+---
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.
+
+## Input fields
+
+```html_example
+<div class="form-tooltip clearfix">
+    <label class="left" for="email">Email*</label>
+    <a href="#" tabindex="-1">
+        <span class="icon-info2"></span>
+        <span class="tooltip">Write the confirmation mail below.</span>
+    </a>
+</div>
+<input type="text" id="email" />
+
+<div class="legend">
+    <h3>
+        <strong>Divider</strong>
+    </h3>
+</div>
+
+<p class="small light-text">Choose if you want the fields for first name visible. The e-mail field is mandatory.</p>
+
+<label for="text_area">Text Area</label>
+<textarea id="text_area"></textarea>
+
+<div class="legend">
+    <h3>
+        <strong>Form settings</strong>
+    </h3>
+</div>
+
+<p class="small light-text">Use a custom landing page and write a custom text for the submit button.</p>
+
+<div class="row">
+    <div class="col-6">
+        <label for="next_url">Next URL</label>
+        <input type="text" id="next_url" />
+    </div>
+    <div class="col-6">
+        <label for="button_text">Button text</label>
+        <input type="text" id="button_text" />
+    </div>
+</div>
+
+
+<div class="row text-right">
+    <input class="btn primary" type="submit" value="Submit">
+</div>
+
+```
+
+## Selects
+
+```html_example
+<label for="country">Country</label>
+<select id="country">
+    <optgroup label="Option Group 1">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="Option Group 2">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3" disabled>Disabled Option</option>
+    </optgroup>
+</select>
+```
+
+## Checkboxes and radio buttons
+
+```html_example
+<div class="row">
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+    <label class="radio">
+        <input type="radio" name="radio" value="2" /> Radio 2
+    </label>
+    <label class="radio">
+        <input type="radio" name="radio" value="3" /> Radio 3
+    </label>
+</div>
+
+<div class="row">
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="2" /> Checkbox 2
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="3" /> Checkbox 3
+    </label>
+</div>
+
+<div>
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div>
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div class="row">
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+</div>
+
+<div>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+</div>
+
+<div class="row">
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Checkbox 1
+    </label>
+</div>
+```
+
+## File upload
+
+```html_example
+<div class="file-upload-wrap btn primary">
+    <input type="file" id="file" class="file-upload-input">
+    <span>File upload</span>
+</div>
+```
+
+## Append button
+
+```html_example
+<div class="append-btn">
+    <input type="text" />
+    <a class="btn primary" href="#">Primary</a>
+</div>
+```
+
+## Layout
+
+```html_example
+<div class="legend">
+    <h3>
+        <strong>Divider</strong>
+    </h3>
+</div>
+```
+
+*/
+/*doc
+---
+title: Tables
+name: tables
+category: Base
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<table class="table no-head">
+        <tr>
+                <td>Simon.wallstrom@gmail.com</td>
+        </tr>
+        <tr>
+                <td>Simon.wallstrom@gmail.com</td>
+        </tr>
+        <tr>
+                <td>Simon.wallstrom@gmail.com</td>
+        </tr>
+        <tr>
+                <td>Simon.wallstrom@gmail.com</td>
+        </tr>
+        <tr>
+                <td>Simon.wallstrom@gmail.com</td>
+        </tr>
+</table>
+```
+
+*/
+.table {
+  width: 100%;
+  font-size: 14px;
+  border-collapse: separate;
+  margin-bottom: 1rem; }
+  .table.fixed-table {
+    table-layout: fixed; }
+    .table.fixed-table td, .table.fixed-table th {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+  .table tr:nth-child(even) td {
+    background: #fafafb; }
+  .table tr:last-child td {
+    border-bottom: 1px solid #c8d0d6; }
+  .table tr:last-child td:first-child {
+    border-bottom-left-radius: 3px; }
+  .table tr:last-child td:last-child {
+    border-bottom-right-radius: 3px; }
+  .table tr:hover td {
+    background: #f9f8de; }
+  .table th {
+    text-align: left;
+    border-top: 1px solid #c8d0d6;
+    border-right: 1px solid #c8d0d6;
+    border-bottom: 1px solid #c8d0d6;
+    padding: 0.5rem 0.7rem;
+    background: #e5e9ec; }
+    .table th:first-child {
+      border-left: 1px solid #c8d0d6;
+      border-top-left-radius: 3px; }
+    .table th:last-child {
+      border-top-right-radius: 3px; }
+  .table td {
+    border-right: 1px solid #c8d0d6;
+    border-bottom: 1px solid #c8d0d6;
+    padding: 0.5rem 0.7rem;
+    vertical-align: top; }
+    .table td ul, .table td p {
+      margin: 0;
+      line-height: 1.1; }
+    .table td:first-child {
+      border-left: 1px solid #c8d0d6; }
+    .table td:last-child {
+      border-right: 1px solid #c8d0d6; }
+
+.no-head tr:first-child td {
+  border-top: 1px solid #c8d0d6; }
+.no-head tr:first-child td:first-child {
+  border-top-left-radius: 3px; }
+.no-head tr:first-child td:last-child {
+  border-top-right-radius: 3px; }
+
+.actions {
+  white-space: nowrap;
+  padding-bottom: 0;
+  width: 20%; }
+  .actions a {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 0 1rem 0 0; }
+
+/*doc
+---
+title: Grid
+name: grid
+category: Layout
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<div class="row">
+  <div class="col-12 styleguide-col">Col 12</div>
+</div>
+
+<div class="row">
+  <div class="col-6 styleguide-col">Col 6</div>
+  <div class="col-6 styleguide-col">Col 6</div>
+</div>
+
+<div class="row">
+  <div class="col-4 styleguide-col">Col 4</div>
+  <div class="col-4 styleguide-col">Col 4</div>
+  <div class="col-4 styleguide-col">Col 4</div>
+</div>
+
+<div class="row">
+  <div class="col-3 styleguide-col">Col 3</div>
+  <div class="col-3 styleguide-col">Col 3</div>
+  <div class="col-3 styleguide-col">Col 3</div>
+  <div class="col-3 styleguide-col">Col 3</div>
+</div>
+```
+
+*/
+.styleguide-col {
+  background: #f4f5f7;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px; }
+
+.wrap {
+  width: 85%;
+  max-width: 1200px;
+  min-width: 930px;
+  margin: 0 auto; }
+
+.container {
+  width: 85%;
+  max-width: 1200px;
+  min-width: 890px;
+  margin: -5rem auto 0;
+  padding: 6.5rem 0 3rem; }
+  .container:after {
+    content: "";
+    display: block; }
+
+.row {
+  margin-bottom: 24px; }
+  .row:before, .row:after {
+    content: "";
+    display: table; }
+  .row:after {
+    clear: both;
+    *zoom: 1; }
+
+.col-1 {
+  width: 5.8011%; }
+
+.col-2 {
+  width: 14.36464%; }
+
+.col-3 {
+  width: 22.92818%; }
+
+.col-4 {
+  width: 31.49171%; }
+
+.col-5 {
+  width: 40.05525%; }
+
+.col-6 {
+  width: 48.61878%; }
+
+.col-7 {
+  width: 57.18232%; }
+
+.col-8 {
+  width: 65.74586%; }
+
+.col-9 {
+  width: 74.30939%; }
+
+.col-10 {
+  width: 82.87293%; }
+
+.col-11 {
+  width: 91.43646%; }
+
+.col-12 {
+  width: 100%; }
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  position: relative;
+  float: left;
+  margin-left: 2.76243%;
+  min-height: 1px; }
+
+[class*='col-']:first-child {
+  margin-left: 0; }
+
+[class*='col-']:last-child {
+  float: right; }
+
+.row > [class*='col-6']:nth-child(odd) {
+  margin-left: 0; }
+
+.row > [class*='col-3']:nth-child(4n+1) {
+  margin-left: 0; }
+
+.row > [class*='col-3']:last-child {
+  float: left; }
+
+.row > [class*='col-4']:nth-child(3n+1) {
+  margin-left: 0; }
+
+.row > [class*='col-4']:last-child {
+  float: left; }
+
+[class*='col-'].box {
+  background: white;
+  padding: 32px 32px 16px;
+  border-radius: 3px; }
+  [class*='col-'].box.border-with-bg {
+    background: #fafafb;
+    border: 1px solid #c8d0d6; }
+
+.box-header {
+  background: #3d7ba4;
+  color: white;
+  margin: -33px -33px 24px;
+  padding: 0 32px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 3px 3px 0 0; }
+  .box-header.light {
+    background: #7e92a1;
+    color: white; }
+  .box-header.muted {
+    background: #e5e9ec;
+    color: #444444;
+    border: 1px solid #c8d0d6; }
+  .box-header.error {
+    background: #df6565; }
+  .box-header span {
+    font-size: 1.2rem;
+    vertical-align: sub;
+    display: inline-block;
+    margin-right: 0.4rem; }
+
+.row.box {
+  background: white;
+  padding: 2rem 3rem;
+  position: relative; }
+  .row.box.error {
+    background: #f5cfcf; }
+
+[class*='col-'].center-box {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
+
+.module {
+  min-height: 310px; }
+
+/*doc
+---
+title: Boxes
+name: boxes
+category: Layout
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<div class="row btn-group-connected text-center">
+    <input type="radio" id="monthly" name="subscription_period" value="1">
+    <label for="monthly" class="btn small muted">Pay monthly</label>
+    <input type="radio" id="yearly" name="subscription_period" value="12">
+    <label for="yearly" class="btn small muted">Pay yearly</label>
+</div>
+
+<div class="row">
+    <div class="col-4 box border-with-bg text-center">
+        <h4 class="box-header">Bronze</h4>
+        <p class="small no-mar">Mails/month</p>
+        <h1 class="no-mar">10 000</h1>
+        <p class="small">99 SEK/month</p>
+        <p class="no-mar">
+            <a href="#" class="btn primary small">Choose</a>
+        </p>
+    </div>
+    <div class="col-4 box border-with-bg text-center">
+        <h4 class="box-header">Silver</h4>
+        <p class="small no-mar">Mails/month</p>
+        <h1 class="no-mar">25 000</h1>
+        <p class="small">239 SEK/month</p>
+        <p class="no-mar">
+            <a href="#" class="btn primary small">Choose</a>
+        </p>
+    </div>
+    <div class="col-4 box border-with-bg text-center">
+        <h4 class="box-header">Gold</h4>
+        <p class="small no-mar">Mails/month</p>
+        <h1 class="no-mar">50 000</h1>
+        <p class="small">449 SEK/month</p>
+        <p class="no-mar">
+            <a href="#" class="btn primary small">Choose</a>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 box border-with-bg">
+        <h4 class="box-header light">Box header</h4>
+        <p>Box with border and bg</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 box border-with-bg">
+        <h4 class="box-header error">Box header</h4>
+        <p>Box with border and bg</p>
+    </div>
+</div>
+```
+
+*/
+/*doc
+---
+title: Buttons
+name: button
+category: Modules
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<a class="btn" href="#">Default</a>
+<button class="btn primary">Primary</button>
+<button class="btn primary muted">Muted</button>
+<a class="btn cancel" href="#">Delete</a>
+```
+
+## Button sizes
+
+There are two sizes for buttons: normal and small. Simply apply the size
+modifier class for the desired size.
+There is also an additional modifier that will make the button take the
+full width of the container. It may be used with the any of the button
+size and style modifiers.
+
+```html_example
+<a class="btn primary" href="#">Primary</a>
+<a class="btn" href="#">Default</a>
+<a class="btn primary small" href="#">Primary small</a>
+<a class="btn small" href="#">Default small</a>
+```
+
+## Button groups
+
+Button groups is used to add some extra spacing between buttons on the same `.row`.
+
+```html_example
+<div class="btn-group-connected">
+    <input name="btn-group" type="radio" value="option1" id="option1">
+    <label for="option1" class="btn small">Option 1</label>
+
+    <input name="btn-group" type="radio" value="option2" id="option2">
+    <label for="option2" class="btn small">Option 2</label>
+
+    <input name="btn-group" type="radio" value="option3" id="option3">
+    <label for="option3" class="btn small">Option 3</label>
+</div>
+```
+
+## Buttons with icons
+
+```html_example
+<a class="btn" href="#"><span class="icon-rocket iconbtn"></span>Default</a>
+<a class="btn" href="#">Default<span class="icon-rocket iconbtn-right"></span></a>
+
+<a class="btn small" href="#"><span class="icon-rocket iconbtn"></span>Small</a>
+<a class="btn small" href="#">Small<span class="icon-rocket iconbtn-right"></span></a>
+```
+
+*/
+.btn, .btn:visited {
+  display: inline-block;
+  padding: 0 25px 0;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #7e92a1;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle; }
+  .btn:hover, .btn:focus, .btn:visited:hover, .btn:visited:focus {
+    background: #637888;
+    color: white; }
+  .btn.primary, .btn:visited.primary {
+    background: #3bb279; }
+    .btn.primary:hover, .btn:visited.primary:hover {
+      background: #2e8c5f; }
+  .btn.muted, .btn:visited.muted {
+    background: #e5e9ec;
+    color: #444444; }
+    .btn.muted:hover, .btn:visited.muted:hover {
+      background: #c8d0d6; }
+  .btn.cancel, .btn:visited.cancel {
+    background: #df6565; }
+    .btn.cancel:hover, .btn:visited.cancel:hover {
+      background: #db5050; }
+  .btn.small, .btn:visited.small {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 13px 0; }
+  .btn.active, .btn:visited.active {
+    background: #7e92a1; }
+    .btn.active:after, .btn:visited.active:after {
+      top: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: rgba(84, 149, 192, 0);
+      border-top-color: #7e92a1;
+      border-width: 6px;
+      margin-left: -6px; }
+  .btn.current, .btn:visited.current {
+    background: #637888; }
+  .btn.block, .btn:visited.block {
+    display: block; }
+  .btn.no-bg, .btn:visited.no-bg {
+    background: none;
+    color: #444444; }
+
+.btn + .btn {
+  margin-left: 1rem; }
+
+.btn-group-connected {
+  font-size: 0; }
+  .btn-group-connected label {
+    margin-left: -1px !important;
+    border-radius: 0;
+    border: 1px solid #c8d0d6;
+    background: none;
+    color: #444444; }
+    .btn-group-connected label:first-of-type {
+      border-radius: 3px 0 0 3px; }
+    .btn-group-connected label:last-of-type {
+      margin-right: 0 !important;
+      border-radius: 0 3px 3px 0; }
+  .btn-group-connected input {
+    width: 0;
+    height: 2rem;
+    overflow: hidden;
+    vertical-align: middle;
+    opacity: 0; }
+  .btn-group-connected input:focus {
+    outline: none; }
+  .btn-group-connected input:focus + label {
+    background: #c8d0d6;
+    color: #444444; }
+  .btn-group-connected input:checked + label {
+    position: relative;
+    background: #3bb279;
+    color: white;
+    border: 1px solid #3bb279; }
+  .btn-group-connected input:checked + label:hover {
+    background: #3bb279;
+    color: white; }
+  .btn-group-connected input + label:hover {
+    background: #f4f5f7;
+    color: #444444; }
+  .btn-group-connected .tooltip {
+    font-weight: 400;
+    text-transform: none; }
+
+.btn > .iconbtn {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  font-size: 0.8rem; }
+
+.btn > .iconbtn-right {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  font-size: 0.8rem; }
+
+.block-btn {
+  display: block; }
+
+body, html {
+  background: white;
+  min-height: 100%; }
+
+.wrap {
+  margin: 0 auto;
+  width: 1000px; }
+
+.site-header {
+  background: white;
+  height: 80px; }
+
+.site-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 17px 30px 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 80px;
+  color: #444444; }
+  .site-logo img {
+    width: 230px; }
+
+.site-nav li, .secondary-nav li {
+  display: inline-block; }
+
+.site-nav {
+  text-align: center; }
+
+.site-nav-link:not(.btn), .site-nav-link:not(.btn):visited {
+  color: #3d7ba4;
+  font-size: 16px;
+  font-weight: 600;
+  height: 80px;
+  line-height: 80px;
+  display: inline-block;
+  padding: 0 25px; }
+  .site-nav-link:not(.btn):hover, .site-nav-link:not(.btn):visited:hover {
+    background: #f4f5f7; }
+
+.secondary-nav {
+  position: absolute;
+  top: 0;
+  right: 40px; }
+  .secondary-nav .site-nav-link {
+    margin-left: 20px;
+    font-size: 14px; }
+    .secondary-nav .site-nav-link:not(.btn) {
+      padding: 0;
+      color: #7e92a1; }
+      .secondary-nav .site-nav-link:not(.btn):hover {
+        background: none;
+        color: #444444; }
+
+.language-eng, .language-sv {
+  position: relative;
+  top: 4px; }
+
+.home-hero {
+  background: #3d7ba4;
+  background: -webkit-linear-gradient(315deg, #3d7ba4 0%, #3d7ba4 50%, #3a759d 50%, #3a759d 100%);
+  background: linear-gradient(135deg, #3d7ba4 0%, #3d7ba4 50%, #3a759d 50%, #3a759d 100%);
+  background: url("http://static.pexels.com/wp-content/uploads/2014/07/evening-galaxy-mountains-1901.jpg");
+  background-size: cover;
+  min-height: 650px;
+  padding: 130px 0 0;
+  color: white;
+  position: relative;
+  overflow: hidden; }
+  .home-hero:after {
+    content: '';
+    background: rgba(61, 123, 164, 0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; }
+  .home-hero .row, .home-hero p, .home-hero img {
+    position: relative;
+    z-index: 1; }
+  .home-hero img {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    bottom: -230px;
+    width: 60%; }
+
+.btn.bordered.white {
+  color: white;
+  box-shadow: inset 0 0 0 2px white; }
+  .btn.bordered.white:hover {
+    box-shadow: inset 0 0 0 2px #3bb279;
+    color: #3bb279; }
+
+.btn.large {
+  padding: 0 35px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px; }
+
+.btn.bordered {
+  background: none;
+  color: #7e92a1;
+  box-shadow: inset 0 0 0 2px #c8d0d6; }
+  .btn.bordered:hover {
+    box-shadow: inset 0 0 0 2px #3bb279;
+    color: #3bb279; }
+
+h1, h2, h3, h4, h5 {
+  margin-bottom: 16px; }
+
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.3; }
+
+h3 {
+  font-size: 30px;
+  margin-bottom: 24px;
+  font-weight: 400; }
+
+.site-heading {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.2; }
+
+.site-heading-ingress {
+  margin: 16px 0 50px; }
+
+.text-blue {
+  color: #3d7ba4; }
+
+.text-light {
+  color: #848484; }
+
+.label {
+  font-weight: 600;
+  color: #3d7ba4;
+  position: relative;
+  margin-bottom: 50px; }
+  .label:after {
+    content: '';
+    background: #3d7ba4;
+    position: absolute;
+    top: 150%;
+    width: 30px;
+    height: 4px;
+    left: 50%;
+    border-radius: 4px;
+    margin-left: -15px; }
+
+table {
+  width: 100%;
+  background: white;
+  border: 1px solid #e5e9ec; }
+
+tr:nth-child(even) td {
+  background: #fafafb; }
+
+th {
+  text-align: left;
+  padding: 20px 40px;
+  font-size: 24px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e9ec;
+  border-right: 1px solid #e5e9ec; }
+
+td {
+  padding: 20px 40px;
+  border-bottom: 1px solid #e5e9ec;
+  border-right: 1px solid #e5e9ec; }
+
+.features {
+  padding: 120px 0; }
+
+.features-content {
+  margin-top: 60px; }
+
+.features-progress {
+  background: #e5e9ec;
+  width: 4px;
+  height: 350px;
+  margin: 0 auto; }
+  .features-progress:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -9px;
+    margin-left: -9px;
+    width: 18px;
+    height: 18px;
+    box-shadow: inset 0 0 0 4px #e5e9ec, 0 0 0 4px white;
+    background: white;
+    border-radius: 20px; }
+
+.pricing {
+  padding: 120px 0;
+  background: #f4f5f7; }
+
+.box-header.large {
+  font-size: 20px;
+  line-height: 50px;
+  height: 50px; }
+
+.customers {
+  padding: 120px 0; }

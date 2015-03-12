@@ -1,0 +1,44 @@
+
+
+
+
+// Pages with subtitles
+.has-subtitle {
+  margin-bottom: 1rem;
+  .btn-group {
+    margin-top: 1.05rem;
+  }
+}
+
+.has-help a {
+  font-size: 0.9rem;
+  color: $dark-grey;
+  display: inline-block;
+  margin-left: 0.3rem;
+  vertical-align: top;
+  &:hover {
+    color: $darker-grey;
+  }
+}
+
+// Sidebar
+.row.box.has-sidebar {
+  padding: 0;
+  display: table;
+  background: none;
+  > .col-8, > .sidebar {
+    display: table-cell;
+    float: none;
+    padding: 2rem 3rem;
+    vertical-align: top;
+  }
+  > .col-8 {
+    background: $white;
+    width: 67%;
+  }
+  > .sidebar {
+    background: $light-grey;
+    width: 33%;
+    border-left: 1px solid $base-grey;
+  }
+}

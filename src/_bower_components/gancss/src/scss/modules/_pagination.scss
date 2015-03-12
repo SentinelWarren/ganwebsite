@@ -1,0 +1,43 @@
+//
+// Pagination
+//
+
+.pagination {
+  margin-top: 1.5rem;
+  text-align: center;
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      background: $lighter-grey;
+      border: 1px solid $grey;
+      text-align: center;
+      height: 2.05rem;
+      padding: 0 0.7rem;
+      margin: 0 0.2rem;
+      border-radius: $border-radius;
+      line-height: 1.9rem;
+      color: $black;
+      &:hover {
+        background: $grey;
+      }
+      span {
+        vertical-align: middle;
+        font-size: 1.3rem;
+      }
+    }
+    &.active a {
+      background: $grey;
+      &:hover {
+        cursor: default;
+      }
+    }
+    &.first a, &.last a {
+      border: none;
+      background: none;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      color: $blue;
+    }
+  }
+}

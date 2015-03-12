@@ -1,0 +1,51 @@
+//
+// ALERTS
+//
+
+/*doc
+---
+title: Alerts
+name: alerts
+category: Modules
+---
+
+Lorem Ipsum is simply dummy text of the printing and typesetting
+industry. Lorem Ipsum has been the industry's standard dummy text
+ever since the 1500s, when an unknown printer took a galley of type
+and scrambled it to make a type specimen book.
+
+```html_example
+<p class="alert success">This is an alert with a success message</p>
+<p class="alert error">This is an alert with an error message</p>
+<p class="alert edit">This is an longform alert with muted message.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+```
+
+*/
+
+.alert {
+    color: $white;
+    padding: 9px 15px;
+    font-size: $font-size-medium;
+    margin-bottom: $margin;
+    border-radius: $border-radius;
+    display: block;
+
+    &.success { background: $green; }
+
+    &.error { background: $red; }
+
+    &.edit {
+        background: $base-grey;
+        color: $black;
+    }
+
+    // Remove link color in alert
+    a {
+        color: white;
+
+        &.underline {
+            border-bottom: 1px dotted rgba(white, 0.5);
+        }
+    }
+}
