@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <% if file_name.include?('index.html') %>
+            <title>GAN styleguide: Overview</title>
+        <% else %>
+            <title>GAN styleguide: <%= title %></title>
+        <% end %>
+        <link rel="stylesheet" href="build/gancss.css">
+        <link rel="stylesheet" href="css/github.css">
+        <link rel="stylesheet" href="css/docs.css">
+        <link rel="stylesheet", type="text/css", href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic|Source+Code+Pro">
+    </head>
+    <% if file_name.include?('index.html') %>
+        <body class="overview">
+    <% else %>
+        <body class="<%= title %>">
+    <% end %>
+
+        <div class="site-wrap">
+
+            <header class="site-header clearfix">
+                <div class="logo">
+                    <a href="index.html">GAN Styleguide</a>
+                </div>
+                <nav class="site-nav">
+                    <ul>
+                        <li><a href="index.html">Overview</a></li>
+                        <li><a href="base.html">Base</a></li>
+                        <li><a href="layout.html">Layout</a></li>
+                        <li><a href="modules.html">Modules</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                    </ul>
+                </nav>
+            </header>
+
+            <div class="container">
+
+                <div class="row">
+                    <% if file_name.include?('index.html') %>
+                        <h1 class="no-mar">Overview</h1>
+                    <% else %>
+                        <h1 class="no-mar"><%= title %></h1>
+                    <% end %>
+                </div>
+
+                <section class="row box has-sidebar">
+
+                    <article class="col-8 styleguide-content">

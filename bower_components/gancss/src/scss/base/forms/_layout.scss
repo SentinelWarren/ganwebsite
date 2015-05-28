@@ -1,0 +1,46 @@
+/*doc
+
+---
+parent: forms
+title: Layout
+---
+
+Long form fields can quickly ge crowded and confusing, so we have added dividers to better
+separate sections from each other.
+
+```html_example
+<div class="legend">
+    <h3>
+        <strong>Divider</strong>
+    </h3>
+</div>
+```
+
+*/
+
+
+.border-with-bg {
+    input, select {
+        background-color: $white;
+    }
+    .legend h3 strong {
+        background: $lighter-grey;
+    }
+}
+
+.legend {
+    border-bottom: 1px solid $base-grey;
+    margin: ($margin) (-$padding) ($margin*2);
+
+    h3 {
+        margin: 0 2.5rem -0.6rem;
+
+        strong {
+            background: $white;
+            display: inline-block;
+            padding: 0 0.5rem;
+            font-size: 1rem;
+            font-weight: $semi-bold;
+        }
+    }
+}

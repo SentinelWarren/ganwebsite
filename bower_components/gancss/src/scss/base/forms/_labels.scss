@@ -1,0 +1,22 @@
+/*doc
+
+---
+parent: forms
+title: Labels
+---
+
+Labels only comes in one style at the moment. We style the attribute and there's no classes to alter the look.
+
+```html_example
+<label for="label">Label</label>
+<input type="text" id="label" />
+```
+
+*/
+
+
+label {
+    display: inline-block;
+    font-size: $font-size-medium;
+    line-height: 1.6;
+}

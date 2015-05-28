@@ -1,0 +1,80 @@
+//
+// SETTINGS
+//
+
+
+// -------------------------------------------------------------
+// # Layout
+// -------------------------------------------------------------
+
+$page-width:            85%;
+$max-page-width:        1200px;
+$min-page-width:        930px;
+
+$padding:               50px; // layout padding, eg. box padding
+$margin:                16px; // Bottom margin for text, components etc.
+
+$row:                   24px; // Bottom margin for grid rows
+
+$height:                35px; // Inputs, buttons etc.
+$height-small:          28px; // Inputs, buttons etc.
+
+
+// -------------------------------------------------------------
+// # Typography
+// -------------------------------------------------------------
+
+$sans:                  "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+$mono:                  "Source Code Pro", "Monaco", "Courier New", monospace;
+$icon:                  "icons";
+
+$font-size:             16px;
+$font-size-medium:      14px;
+$font-size-small:       13px;
+
+$line-height:           1.6;
+
+$regular:               400;
+$semi-bold:             600;
+$bold:                  700;
+
+
+// -------------------------------------------------------------
+// # Colors
+// -------------------------------------------------------------
+
+$base-grey:             #e5e9ec;
+
+$black:                 #444444;
+$darker-grey:           darken($base-grey, 45%);
+$dark-grey:             darken($base-grey, 35%);
+$grey:                  darken($base-grey, 10%);
+$light-grey:            lighten($base-grey, 5%);
+$lighter-grey:          lighten($base-grey, 7%);
+$white:                 white;
+
+$blue:                  #3d7ba4;
+$dark-blue:             darken($blue, 10%);
+$light-blue:            lighten($blue, 10%);
+
+$green:                 #3bb279;
+$yellow:                #e7e271;
+$red:                   #df6565;
+$light-red:             lighten($red, 25%);
+$footer-black:          #363636;
+$light-text:            #A4AAAE;
+
+
+// -------------------------------------------------------------
+// # Misc
+// -------------------------------------------------------------
+
+$box-shadow:            0 1px 2px rgba(0,0,0,0.07);
+$box-shadow-large:      0 3px 12px rgba(0,0,0,0.15);
+$box-shadow-inset:      inset 0 2px 5px rgba(0,0,0,0.15);
+
+$border-radius:         3px;
+
+$z-small:               100;
+$z-medium:              200;
+$z-large:               300;

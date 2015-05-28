@@ -1,0 +1,153 @@
+/*doc
+---
+title: Grid
+name: grid
+category: Layout
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<div class="row">
+  <div class="col-12 styleguide-col">Col 12</div>
+</div>
+
+<div class="row">
+  <div class="col-6 styleguide-col">Col 6</div>
+  <div class="col-6 styleguide-col">Col 6</div>
+</div>
+
+<div class="row">
+  <div class="col-4 styleguide-col">Col 4</div>
+  <div class="col-4 styleguide-col">Col 4</div>
+  <div class="col-4 styleguide-col">Col 4</div>
+</div>
+
+<div class="row">
+  <div class="col-3 styleguide-col">Col 3</div>
+  <div class="col-3 styleguide-col">Col 3</div>
+  <div class="col-3 styleguide-col">Col 3</div>
+  <div class="col-3 styleguide-col">Col 3</div>
+</div>
+```
+
+*/
+
+.styleguide-col {
+  background: $light-grey;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
+}
+
+
+.wrap {
+  width: $page-width;
+  max-width: $max-page-width;
+  min-width: $min-page-width;
+  margin: 0 auto;
+}
+
+.container {
+  width: $page-width;
+  max-width: $max-page-width;
+  min-width: $min-page-width - 40px;
+  margin: -5rem auto 0;
+  padding: 6.5rem 0 3rem;
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.row {
+  margin-bottom: $row;
+  @include clearfix;
+}
+
+.col-1 {
+  width: 5.8011%;
+}
+
+.col-2 {
+  width: 14.36464%;
+}
+
+.col-3 {
+  width: 22.92818%;
+}
+
+.col-4 {
+  width: 31.49171%;
+}
+
+.col-5 {
+  width: 40.05525%;
+}
+
+.col-6 {
+  width: 48.61878%;
+}
+
+.col-7 {
+  width: 57.18232%;
+}
+
+.col-8 {
+  width: 65.74586%;
+}
+
+.col-9 {
+  width: 74.30939%;
+}
+
+.col-10 {
+  width: 82.87293%;
+}
+
+.col-11 {
+  width: 91.43646%;
+}
+
+.col-12 {
+  width: 100.0%;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+  position: relative;
+  float: left;
+  margin-left: 2.76243%;
+  min-height: 1px;
+}
+
+[class*='col-']:first-child {
+  margin-left: 0;
+}
+
+[class*='col-']:last-child {
+  float: right;
+}
+
+// Enable multiple row columns without new .row
+.row > [class*='col-6']:nth-child(odd) {
+  margin-left: 0;
+}
+
+.row > [class*='col-3']:nth-child(4n+1) {
+  margin-left: 0;
+}
+
+.row > [class*='col-3']:last-child {
+  float: left;
+}
+
+.row > [class*='col-4']:nth-child(3n+1) {
+  margin-left: 0;
+}
+
+.row > [class*='col-4']:last-child {
+  float: left;
+}

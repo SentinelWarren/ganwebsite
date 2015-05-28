@@ -1,0 +1,99 @@
+//
+// MIXINS
+//
+
+// @include bp(medium) { SCSS here };
+@mixin bp($point) {
+    @if $point == large {
+        @media (min-width: 1600px) {
+            @content;
+        }
+    }
+    @if $point == medium {
+        @media (max-width: 1080px) {
+            @content;
+        }
+    }
+    @if $point == small {
+        @media (max-width: 600px) {
+            @content;
+        }
+    }
+}
+
+// @include microclearfix;
+@mixin clearfix {
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+        *zoom: 1;
+    }
+}
+
+// @include fontface('family', 'assets/fonts/', 'myfontname');
+@mixin fontface($font-family, $font-url, $font-name) {
+    @font-face {
+        font: {
+            family: $font-family;
+            style: normal;
+            weight: normal;
+        };
+        src: url($font-url + "/" + $font-name + ".eot");
+        src: url($font-url + "/" + $font-name + ".eot#iefix") format("embedded-opentype"), url($font-url + "/" + $font-name + ".woff") format("woff"), url($font-url + "/" + $font-name + ".ttf") format("truetype"), url($font-url + "/" + $font-name + ".svg#" + $font-name) format("svg");
+    }
+}
+
+
+@mixin cssTriangle($size, $borderWidth, $borderColor, $position, $percent, $bg) {
+    position: relative;
+
+    $d:top;
+    $triangle-margin:left;
+
+    @if $position == top {
+            $d: bottom;
+    } @else if $position == bottom {
+            $d: top;
+    } @else if $position == left {
+            $d: right;
+    } @else {
+            $d: left;
+    }
+
+    @if $position == top or $position == bottom {
+            $triangle-margin: left;
+    } @else {
+            $triangle-margin: top;
+    }
+
+    &:after, &:before {
+            #{$d}: 100%;
+            border: solid transparent;
+            content: " ";
+            width:0;
+            height:0;
+            position: absolute;
+            pointer-events: none;
+    }
+
+    &:after {
+            border-color: rgba(119, 100, 213, 0);
+            border-#{$d}-color: $bg;
+            border-width: $size;
+            #{$triangle-margin}: $percent;
+            margin-#{$triangle-margin}: -$size;
+            z-index:3;
+    }
+
+    &:before {
+            border-color: rgba(194, 225, 245, 0);
+            border-#{$d}-color: $borderColor;
+            border-width: $size + (round($borderWidth*1.41421356));
+            #{$triangle-margin}: $percent;
+            margin-#{$triangle-margin}: -($size + (round($borderWidth*1.41421356)));
+            z-index:2;
+    }
+}

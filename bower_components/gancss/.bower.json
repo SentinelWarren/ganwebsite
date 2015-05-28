@@ -1,0 +1,13 @@
+{
+  "name": "gancss",
+  "homepage": "https://github.com/getanewsletter/gancss",
+  "_release": "e56f2ddc23",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e56f2ddc235b305083b900fad83fc85ea783f83d"
+  },
+  "_source": "git@github.com:getanewsletter/gancss.git",
+  "_target": "*",
+  "_originalSource": "git@github.com:getanewsletter/gancss.git"
+}

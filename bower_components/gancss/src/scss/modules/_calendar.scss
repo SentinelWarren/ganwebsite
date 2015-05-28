@@ -1,0 +1,38 @@
+//
+// Calendar plugin
+// https://github.com/ChiperSoft/Kalendae
+//
+
+body .kalendae.k-floating {
+    background: $white;
+    border: 1px solid $grey;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow-large;
+    margin-top: 10px;
+    @include cssTriangle(6px, 1px, $grey, top, 85%, $white);
+
+    .k-days span {
+        text-align: center;
+        line-height: 1.2em;
+        border-radius: 0;
+    }
+
+    .k-days span.k-in-month.k-active {
+        border-color: $grey;
+    }
+
+    .k-days span.k-active:hover {
+        background: $grey;
+    }
+
+    .k-days span.k-selected.k-active {
+        background: $green;
+        border-color: $green;
+    }
+
+    .k-btn-previous-year:hover, .k-btn-next-year:hover,
+
+    .k-btn-previous-month:hover, .k-btn-next-month:hover {
+        color: $green;
+    }
+}

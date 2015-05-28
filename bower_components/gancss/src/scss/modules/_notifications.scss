@@ -1,0 +1,106 @@
+/*doc
+---
+title: Notifications
+name: notifications
+category: Modules
+---
+
+Notifications comes in two styles. The default style is positive, meaning it comes with
+a checkmark next to it. Add the class `.error` two display an error icon instead.
+
+```html_example
+<div style="position: relative;">
+<ul id="flash-messages">
+    <li>
+        Standard notification
+        <span class="icon-cross"></span>
+    </li>
+    <li class="error">
+        Error notification
+        <span class="icon-cross"></span>
+    </li>
+</ul>
+</div>
+```
+
+*/
+
+
+#flash-messages {
+    margin: 0;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    right: 0.6rem;
+    z-index: $z-large;
+    text-align: center;
+
+    li {
+        cursor: pointer;
+        margin-top: 10px;
+        min-width: 250px;
+        background: $white;
+        border: 1px solid $grey;
+        box-shadow: $box-shadow-large;
+        font-size: $font-size-small;
+        font-weight: $semi-bold;
+        padding: $margin;
+        border-radius: $border-radius;
+        transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+        position: relative;
+
+        span {
+            position: absolute;
+            top: 4px;
+            right: 5px;
+            color: $light-text;
+        }
+
+        &:hover {
+            border: 1px solid $dark-grey;
+
+            > span {
+                color: $black;
+            }
+        }
+
+        &:before {
+            font-family: $icon;
+            content: "\e677";
+            margin-right: 10px;
+            background: $green;
+            color: $white;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            border-radius: 24px;
+            text-align: center;
+            line-height: 2;
+        }
+        &.error:before {
+            content: "\e678";
+            background: $red;
+        }
+    }
+
+    .ng-enter,
+    .ng-leave {
+        transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+        text-overflow: clip;
+        white-space: nowrap;
+    }
+
+    .ng-leave.ng-leave-active,
+    .ng-enter {
+        opacity: 0;
+        margin: 0;
+        height: 0px;
+        padding: 0 2.5rem;
+    }
+
+    .ng-enter.ng-enter-active {
+        opacity: 1;
+        top: 0.6rem;
+        right: 0.6rem;
+    }
+}

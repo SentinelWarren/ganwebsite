@@ -1,0 +1,63 @@
+/*doc
+
+---
+title: Post/Prefix
+name: post/prefix
+category: Modules
+---
+
+```html_example
+<div class="row">
+<div class="append-btn">
+    <input type="text" />
+    <a class="btn primary" href="#">Primary</a>
+</div>
+</div>
+<div class="append-btn">
+    <input class="small" type="text" />
+    <a class="btn primary small" href="#">Primary</a>
+</div>
+```
+
+*/
+
+
+.append-btn {
+    display: table;
+    position: relative;
+    width: 100%;
+    margin-bottom: $margin;
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    textarea {
+        margin-bottom: 0;
+        border-radius: $border-radius 0 0 $border-radius;
+        position: relative;
+        margin-bottom: 0;
+
+        &.small {
+            height: 30px;
+        }
+    }
+    .btn {
+        display: table-cell !important;
+        border-radius: 0 $border-radius $border-radius 0;
+        white-space: nowrap;
+        width: 1%;
+        position: relative;
+    }
+
+    // add border to muted button
+    .muted {
+        border-bottom: 1px solid $grey;
+        border-top: 1px solid $grey;
+        border-right: 1px solid $grey;
+
+        &:hover {
+            background: lighten($grey, 5%)!important;
+        }
+    }
+}

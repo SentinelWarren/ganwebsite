@@ -1,0 +1,17 @@
+// -------------------------------------------------------------
+// # Form validation
+// -------------------------------------------------------------
+
+span.error {
+    color: $red;
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    position: relative;
+    margin-top: -0.8rem;
+    margin-bottom: 0.8rem;
+
+    &.small {
+        margin-top: -0.1rem;
+    }
+}

@@ -1,0 +1,78 @@
+/*doc
+---
+title: Helpers
+name: helpers
+category: Tools
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<button class="btn primary">Primary</button>
+<a class="btn" href="#">Default</a>
+```
+
+*/
+
+
+.clearfix {
+  @include clearfix;
+}
+
+.no-mar {
+  margin: 0 !important;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+// Positioning
+.no-float {
+  float: none !important;
+}
+
+.left {
+  float: left !important;
+}
+
+.right {
+  float: right !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.valign-middle {
+  vertical-align: middle;
+}
+
+.valign-top {
+  vertical-align: top;
+}
+
+// Apperance
+.disabled {
+  opacity: 0.5;
+  &:hover, a:hover {
+    cursor: default !important;
+  }
+}
+
+// Text overflow ellipsis
+.ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

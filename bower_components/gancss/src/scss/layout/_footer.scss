@@ -1,0 +1,72 @@
+//
+// FOOTER
+//
+
+.site-footer {
+  background: $footer-black;
+  padding: 3% 0 0;
+  .footer-nav {
+    h4 {
+      color: lighten($footer-black, 30%);
+      font-size: 0.9rem;
+      font-weight: $bold;
+      text-transform: uppercase;
+      margin: 1.2rem 0 0.6rem;
+    }
+    a:not(.btn) {
+      font-size: 0.9rem;
+      color: $light-blue;
+      display: block;
+      padding: 0 0 0.5rem 0;
+    }
+    // Help
+    [class*='col-'] {
+      padding: 0 1rem 1.5rem 0;
+    }
+    a.btn {
+      width: 100%;
+      background: lighten($footer-black, 5%);
+      text-align: center;
+      &:hover {
+        background: darken($footer-black, 3%);
+      }
+      &.facebook:hover > span {
+        color: #3b5998;
+      }
+      &.twitter:hover > span {
+        color: #00aced;
+      }
+      &.youtube:hover > span {
+        color: #bb0000;
+      }
+    }
+  }
+}
+
+.footer-not-auth, .site-wrap:after {
+  height: 49px;
+}
+
+.site-wrap.authenticated + .site-footer, .site-wrap.authenticated:after {
+  height: 338px;
+  content: "";
+}
+
+.footer-legal {
+  background: darken($footer-black, 3%);
+  padding: 1rem 0 0.9rem;
+  font-size: 0.9rem;
+  text-align: right;
+  span {
+    display: inline-block;
+    float: left;
+    color: lighten($footer-black, 30%);
+  }
+  a {
+    margin-left: 1rem;
+    color: lighten($footer-black, 30%);
+    &:hover {
+      color: lighten($footer-black, 50%);
+    }
+  }
+}

@@ -34,6 +34,7 @@
 // @import "gancss/src/scss/layout/footer";
 // @import "gancss/src/scss/layout/site";
 @import "gancss/src/scss/layout/grid";
+@import "layout/grid";
 @import "gancss/src/scss/layout/boxes";
 
 
@@ -147,33 +148,38 @@ $header-height: 80px;
 
 // Hero
 
-.home-hero {
+.hero {
     background: $blue;
     background: linear-gradient(135deg, $blue 0%,$blue 50%, darken($blue, 2%) 50%, darken($blue, 2%) 100%);
-    background: url("http://static.pexels.com/wp-content/uploads/2014/07/evening-galaxy-mountains-1901.jpg");
-    background-size: cover;
-    min-height: 650px;
     padding: 130px 0 0;
     color: $white;
     position: relative;
     overflow: hidden;
 
-    &:after {
-        content: '';
-        background: rgba($blue, .6);
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-    }
+    &.page { padding: 130px 0; }
 
-    .row, p, img { position: relative; z-index: 1; }
+    &.home {
+        background: url("http://static.pexels.com/wp-content/uploads/2014/07/evening-galaxy-mountains-1901.jpg");
+        background-size: cover;
+        min-height: 650px;
 
-    img {
-        position: absolute;
-        right: 0;
-        left: 0;
-        margin: 0 auto;
-        bottom: -230px;
-        width: 60%;
+        &:after {
+            content: '';
+            background: rgba($blue, .6);
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+        }
+
+        .row, p, img { position: relative; z-index: 1; }
+
+        img {
+            position: absolute;
+            right: 0;
+            left: 0;
+            margin: 0 auto;
+            bottom: -230px;
+            width: 60%;
+        }
     }
 }
 
@@ -182,8 +188,9 @@ $header-height: 80px;
     box-shadow: inset 0 0 0 2px $white;
 
     &:hover {
-        box-shadow: inset 0 0 0 2px $green;
-        color: $green;
+        box-shadow: inset 0 0 0 2px $white;
+        color: $black;
+        background: $white;
     }
 }
 
@@ -202,8 +209,9 @@ $header-height: 80px;
     box-shadow: inset 0 0 0 2px $grey;
 
     &:hover {
-        box-shadow: inset 0 0 0 2px $green;
-        color: $green;
+        box-shadow: inset 0 0 0 2px $grey;
+        color: $black;
+        background: $grey;
     }
 }
 
@@ -220,9 +228,8 @@ h2 {
 }
 
 h3 {
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 24px;
-    font-weight: 400;
 }
 
 .site-heading {
@@ -277,68 +284,47 @@ tr:nth-child(even) td {
 
 th {
     text-align: left;
-    padding: 20px 40px;
-    font-size: 24px;
+    padding: 20px 30px;
     font-weight: $semi-bold;
     border-bottom: 1px solid $base-grey;
     border-right: 1px solid $base-grey;
 }
 
 td {
-    padding: 20px 40px;
+    padding: 12px 30px;
     border-bottom: 1px solid $base-grey;
     border-right: 1px solid $base-grey;
 }
 
 
-// features
+// Layout
 
-.features {
+.section {
     padding: 120px 0;
+
+    &.grey { background: $light-grey; }
 }
 
 .features-content {
     margin-top: 60px;
 }
 
-.features-progress {
-    background: $base-grey;
-    width: 4px;
-    height: 350px;
-    margin: 0 auto;
 
-    &:before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-top: -9px;
-        margin-left: -9px;
-        width: 18px;
-        height: 18px;
-        box-shadow: inset 0 0 0 4px $base-grey, 0 0 0 4px $white;
-        background: $white;
-        border-radius: 20px;
+// Footer
+
+.site-footer {
+    background: $footer-black;
+    padding: 60px 70px 40px;
+
+    .footer-link {
+        font-weight: $semi-bold;
+        color: $light-blue;
+        margin-left: 50px;
+        display: inline-block;
+        margin-top: 5px;
+
+        &:hover {
+            color: $white;
+        }
     }
-}
-
-
-// Pricing
-
-.pricing {
-    padding: 120px 0;
-    background: $light-grey;
-}
-
-.box-header.large {
-    font-size: 20px;
-    line-height: 50px;
-    height: 50px;
-}
-
-
-// Customers
-
-.customers {
-    padding: 120px 0;
 }

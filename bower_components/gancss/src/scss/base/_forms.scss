@@ -1,0 +1,74 @@
+//
+// FORMS
+//
+
+
+// This file is only for documentation purposes.
+// See base/forms for all the form components.
+
+
+// -------------------------------------------------------------
+// # Documentation
+// -------------------------------------------------------------
+
+/*doc
+---
+title: Forms
+name: forms
+category: Base
+---
+
+All form components come in a few different variations. The
+standard component height is 35 pixels. Add a class of `.small`
+to make it 30 pixels instead.
+
+## Basic form example
+
+```html_example
+<div class="form-tooltip clearfix">
+    <label class="left" for="email">Email*</label>
+    <a href="#" tabindex="-1">
+        <span class="icon-info2"></span>
+        <span class="tooltip">Write the confirmation mail below.</span>
+    </a>
+</div>
+<input type="text" id="email" />
+
+<div class="legend">
+    <h3>
+        <strong>Divider</strong>
+    </h3>
+</div>
+
+<p class="small light-text">Choose if you want the fields for first name visible. The e-mail field is mandatory.</p>
+
+<label for="text_area">Text Area</label>
+<textarea id="text_area"></textarea>
+
+<div class="legend">
+    <h3>
+        <strong>Form settings</strong>
+    </h3>
+</div>
+
+<p class="small light-text">Use a custom landing page and write a custom text for the submit button.</p>
+
+<div class="row">
+    <div class="col-6">
+        <label for="next_url">Next URL</label>
+        <input type="text" id="next_url" />
+    </div>
+    <div class="col-6">
+        <label for="button_text">Button text</label>
+        <input type="text" id="button_text" />
+    </div>
+</div>
+
+
+<div class="row text-right">
+    <input class="btn primary" type="submit" value="Submit">
+</div>
+
+```
+
+*/

@@ -1,0 +1,69 @@
+/*doc
+---
+title: Pagination
+name: pagination
+category: Modules
+---
+
+More info coming soon.
+
+```html_example
+<ul class="pagination">
+    <li class="first"><a>First</a></li>
+    <li><a><span class="icon-arrow-left6"></span></a></li>
+    <li class="active"><a href="#1">1</a></li>
+    <li><a href="#1">2</a></li>
+    <li><a href="#1">3</a></li>
+    <li><a href="#1">4</a></li>
+    <li><a href="#1">5</a></li>
+    <li><a><span class="icon-arrow-right6"></span></a></li>
+    <li class="last"><a>Last</a></li>
+</ul>
+```
+
+*/
+
+
+.pagination {
+    margin-top: 1.5rem;
+    text-align: center;
+
+    li {
+        display: inline-block;
+
+        a {
+            display: block;
+            background: $base-grey;
+            text-align: center;
+            height: $height-small;
+            padding: 0 9px;
+            margin: 0 1px;
+            font-size: $font-size-medium;
+            font-weight: $semi-bold;
+            border-radius: $border-radius;
+            line-height: $height-small;
+            color: $black;
+
+            &:hover {
+                background: $grey;
+            }
+
+            &:active { box-shadow: $box-shadow-inset; }
+
+            span { vertical-align: middle; }
+        }
+
+        &.active a {
+            background: $grey;
+            box-shadow: $box-shadow-inset;
+
+            &:hover { cursor: default; }
+        }
+
+        &.first a, &.last a {
+            border: none;
+            background: none;
+            color: $blue;
+        }
+    }
+}

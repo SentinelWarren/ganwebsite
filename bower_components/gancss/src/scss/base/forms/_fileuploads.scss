@@ -1,0 +1,39 @@
+/*doc
+
+---
+parent: forms
+title: File uploads
+---
+
+The `<input type="file>"` is styled with css to remove th ugly defaults.
+We use angular in the front end to display the name of the chosen file.
+
+```html_example
+<div class="file-upload-wrap btn primary">
+    <input type="file" id="file" class="file-upload-input">
+    <span>File upload</span>
+</div>
+```
+
+*/
+
+
+.file-upload-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.file-upload-input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    font-size: 43px;
+    direction: ltr;
+    cursor: pointer;
+    height: 40px;
+    line-height: 40px;
+    width: 200%;
+    cursor: pointer;
+}

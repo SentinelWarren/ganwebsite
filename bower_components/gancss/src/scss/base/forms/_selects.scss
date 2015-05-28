@@ -1,0 +1,62 @@
+/*doc
+
+---
+parent: forms
+title: Selects
+---
+
+```html_example
+<label for="country">Country</label>
+<select id="country">
+    <optgroup label="Option Group 1">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+    </optgroup>
+    <optgroup label="Option Group 2">
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3" disabled>Disabled Option</option>
+    </optgroup>
+</select>
+```
+
+*/
+
+
+select, .choose-date {
+    display: block;
+    width: 100%;
+    height: $height;
+    line-height: $height;
+    -webkit-appearance: none !important;
+    background: $lighter-grey url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+) 99% center no-repeat;
+    border: 1px solid $grey;
+    margin-bottom: $margin;
+    padding: 0 $padding 0 13px;
+    font-size: $font-size-medium;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    // Hack to remove native arrow in FF
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: "";
+
+    // States
+    &:hover {
+        border: 1px solid $dark-grey;
+    }
+
+    &:focus, &:active {
+        outline: 0;
+        border: 1px solid $light-blue;
+    }
+    &.small {
+        height: $height-small;
+        line-height: $height-small;
+    }
+}
+
+select::-ms-expand {
+    display: none;
+}

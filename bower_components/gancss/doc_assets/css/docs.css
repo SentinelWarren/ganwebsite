@@ -1,0 +1,51 @@
+/*
+# Docs specific styles
+*/
+
+
+.styleguide-content > h1:not(:first-child) {
+    margin-top: 4rem;
+    border-top: 1px solid #e5e9ec;
+    padding-top: 3rem;
+    margin-left: -3rem;
+    margin-right: -3rem;
+    padding-left: 3rem;
+}
+.styleguide-content > h2 { margin-top: 5rem; }
+
+.styleguide-content p + h2 { margin-top: 0; }
+
+.styleguide-content .codeExample {
+    border-radius: 3px;
+    margin-bottom: 16px;
+}
+
+.styleguide-content .exampleOutput {
+    position: relative;
+    padding: 50px 50px 32px;
+    border-top: 1px solid #c8d0d6;
+    border-left: 1px solid #c8d0d6;
+    border-right: 1px solid #c8d0d6;
+    border-radius: 3px 3px 0 0;
+}
+
+.styleguide-content .exampleOutput:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    border-bottom: 1px solid #c8d0d6;
+    border-right: 1px solid #c8d0d6;
+    padding: 1px 5px;
+    border-radius: 0 0 3px 0;
+}
+
+.styleguide-content .exampleOutput:before { content: 'Example'; }
+
+body:not(.overview) .styleguide-content .codeBlock pre { border-radius: 0 0 3px 3px; }
+
+#flash-messages {
+    position: relative;
+}

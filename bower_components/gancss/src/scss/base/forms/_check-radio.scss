@@ -1,0 +1,82 @@
+/*doc
+
+---
+parent: forms
+title: Checkboxes and radio buttons
+---
+
+We use native styling for both checkboxes and radio buttons to ensure usability across browsers.
+Both components works the same way, you can either display the label inline or stacked.
+
+```html_example
+<div class="row">
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="1" /> Radio 1
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="2" /> Radio 2
+    </label>
+    <label class="checkbox">
+        <input type="checkbox" name="checkbox" value="3" /> Radio 3
+    </label>
+</div>
+
+<div>
+    <input id="radio1" type="radio" name="radio1" />
+    <label for="radio1">Radio 1</label>
+</div>
+
+<div>
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+
+<div class="row">
+    <label class="radio">
+        <input type="radio" name="radio" value="1" /> Radio 1
+    </label>
+</div>
+```
+
+*/
+
+
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+    font-size: $font-size-medium;
+
+}
+
+// Radio and checkbox outside label
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    display: inline-block;
+    margin-left: 5px;
+    margin-bottom: 0;
+    vertical-align: bottom;
+    cursor: pointer;
+}
+
+// Radio and checkbox inside label
+label.radio,
+label.checkbox {
+    position: relative;
+    padding-left: 20px;
+    cursor: pointer;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        position: absolute;
+        left: 1px;
+        margin-top: 4px;
+    }
+
+    input[type="checkbox"] { margin-top: 5px; }
+}
+
+label.radio + label.radio,
+label.checkbox + label.checkbox {
+    margin-left: 20px;
+}

@@ -1,0 +1,53 @@
+/*doc
+---
+title: Nav
+name: nav
+category: Modules
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element.
+
+```html_example
+<ul class="sidebar-nav">
+    <li><a href="#">Nav item 1</a></li>
+    <li><a href="#">Nav item 2</a></li>
+    <li><a href="#">Nav item 3</a></li>
+    <li><a href="#">Nav item 4</a></li>
+    <li><a href="#">Nav item 5</a></li>
+</ul>
+```
+*/
+
+
+// Sidebar navigation
+.sidebar-nav {
+
+    margin: 0 0 $margin*2;
+
+    a {
+        display: block;
+        border-bottom: 1px solid $base-grey;
+        padding: 9px 0 8px;
+        font-size: $font-size-medium;
+        font-weight: $semi-bold;
+        position: relative;
+
+        // &:hover { background: $base-grey; }
+    }
+    li.active {
+        a {
+            color: $black;
+            cursor: default;
+
+            &:before {
+                content: "\e6d1";
+                font-family: $icon;
+                vertical-align: middle;
+                line-height: 1;
+                margin-right: 5px;
+                color: $black;
+            }
+        }
+    }
+}

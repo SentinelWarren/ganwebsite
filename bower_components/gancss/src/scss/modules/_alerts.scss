@@ -1,0 +1,50 @@
+//
+// ALERTS
+//
+
+/*doc
+---
+title: Alerts
+name: alerts
+category: Modules
+---
+
+Alerts can be used to display important messages with great contrast
+to draw the attention of the user. It comes in a few different colors.
+See examples below for available options.
+
+```html_example
+<p class="alert success">This is an alert with a success message</p>
+<p class="alert error">This is an alert with an error message</p>
+<p class="alert edit">This is an longform alert with muted message.
+Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+```
+
+*/
+
+.alert {
+    color: $white;
+    padding: 7px 13px 6px;
+    font-size: $font-size-medium;
+    margin-bottom: $margin;
+    border-radius: $border-radius;
+    display: block;
+
+    &.success { background: $green; }
+
+    &.error { background: $red; }
+
+    &.edit {
+        background: $base-grey;
+        color: $black;
+    }
+
+    // Remove link color in alert
+    a {
+        color: white;
+
+        &.underline {
+            border-bottom: 1px dotted rgba(white, 0.5);
+        }
+    }
+}

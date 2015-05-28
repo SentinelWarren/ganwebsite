@@ -1,0 +1,248 @@
+/*doc
+---
+title: Buttons
+name: button
+category: Modules
+---
+
+Button styles can be applied to any element. Typically you'll want to
+use either a `<button>` or an `<a>` element. Buttons next to each other
+is spaced out with the adjacent selector `.btn + .btn`.
+
+```html_example
+<a class="btn" href="#">Default</a>
+<button class="btn primary">Primary</button>
+<button class="btn primary muted">Muted</button>
+<a class="btn cancel" href="#">Delete</a>
+```
+
+## Button sizes
+
+There are two sizes for buttons: normal and small. Simply apply the size
+modifier class for the desired size.
+There is also an additional modifier that will make the button take the
+full width of the container. It may be used with the any of the button
+size and style modifiers.
+
+```html_example
+<a class="btn primary" href="#">Primary</a>
+<a class="btn" href="#">Default</a>
+<a class="btn primary small" href="#">Primary small</a>
+<a class="btn small" href="#">Default small</a>
+```
+
+## Button groups
+
+Button groups is used to add some extra spacing between buttons on the same `.row`.
+
+```html_example
+<div class="btn-group-connected">
+    <input name="btn-group" type="radio" value="option1" id="option1">
+    <label for="option1" class="btn muted">Option 1</label>
+
+    <input name="btn-group" type="radio" value="option2" id="option2">
+    <label for="option2" class="btn muted">Option 2</label>
+
+    <input name="btn-group" type="radio" value="option3" id="option3">
+    <label for="option3" class="btn muted">Option 3</label>
+</div>
+```
+
+## Buttons with icons
+
+```html_example
+<a class="btn" href="#"><span class="icon-rocket iconbtn"></span>Default</a>
+<a class="btn" href="#">Default<span class="icon-rocket iconbtn-right"></span></a>
+
+<a class="btn small" href="#"><span class="icon-rocket iconbtn"></span>Small</a>
+<a class="btn small" href="#">Small<span class="icon-rocket iconbtn-right"></span></a>
+```
+
+*/
+
+
+// -------------------------------------------------------------
+// # Button styles
+// -------------------------------------------------------------
+
+.btn, .btn:visited {
+    display: inline-block;
+    padding: 0 25px 0;
+    height: $height;
+    line-height: $height;
+    font-size: $font-size-medium;
+    font-weight: $semi-bold;
+    background: $dark-grey;
+    color: white;
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+
+    // States
+    &:hover {
+        background: $darker-grey;
+        color: white;
+    }
+
+    &:active,
+    &.active {
+        box-shadow: $box-shadow-inset;
+    }
+
+    // Modifiers
+    &.primary {
+        background: $green;
+
+        &:hover {
+            background: darken($green, 10%);
+        }
+    }
+
+    &.muted {
+        background: $base-grey;
+        color: $black;
+
+        &:hover {
+            background: $grey;
+        }
+    }
+
+    &.cancel {
+        background: $red;
+
+        &:hover {
+            background: darken($red, 5%);
+        }
+    }
+
+    &.small {
+        height: $height-small;
+        line-height: $height-small;
+        padding: 0 13px 0;
+    }
+
+    &.current {
+        background: $darker-grey;
+    }
+
+    &.block {
+        display: block;
+    }
+
+    &.no-bg {
+        background: none;
+        color: $black;
+    }
+}
+
+.btn + .btn { margin-left: 1rem; }
+
+
+// -------------------------------------------------------------
+// # Button groups
+// -------------------------------------------------------------
+
+// Remove?
+// .btn-group,
+// .btn-dropdown-group {
+
+//     > .btn,
+//     > .has-btn-dropdown {
+//         margin-right: 1rem;
+//         vertical-align: bottom;
+
+//         &:last-child {
+//             margin-right: 0;
+//         }
+//     }
+// }
+
+.btn-group-connected {
+    font-size: 0;
+
+    .btn {
+        margin-left: -1px !important;
+        border-radius: 0;
+        border: 1px solid $grey;
+        background: none;
+        color: $black;
+
+        &:first-of-type {
+            border-radius: $border-radius 0 0 $border-radius;
+        }
+
+        &:last-of-type {
+            margin-right: 0 !important;
+            border-radius: 0 $border-radius $border-radius 0;
+        }
+    }
+
+    input {
+        width: 0;
+        height: 2rem;
+        overflow: hidden;
+        vertical-align: middle;
+        opacity: 0;
+    }
+
+    input:focus + label {
+        background: $grey;
+        color: $black;
+    }
+
+    input:checked + label {
+        position: relative;
+    }
+
+    // Modifiers
+    input:checked + .btn,
+    input:checked + .btn:hover {
+        background: $dark-grey;
+        color: white;
+        border: 1px solid $dark-grey;
+    }
+
+    input:checked + .btn.primary,
+    input:checked + .btn.primary:hover {
+        background: $green;
+        color: white;
+        border: 1px solid $green;
+    }
+
+    input:checked + .btn.muted,
+    input:checked + .btn.muted:hover {
+        background: $base-grey;
+        color: $black;
+        border: 1px solid $grey;
+    }
+
+    input + .btn:hover {
+        background: $light-grey;
+        color: $black;
+    }
+
+    .tooltip {
+        font-weight: $regular;
+        text-transform: none;
+    }
+}
+
+// Icons in buttons
+.btn > .iconbtn {
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    font-size: 0.8rem;
+}
+
+.btn > .iconbtn-right {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    font-size: 0.8rem;
+}
+
+// Block buttons
+.block-btn {
+    display: block;
+}

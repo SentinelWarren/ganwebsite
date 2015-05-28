@@ -1,0 +1,129 @@
+//
+// GLOBAL
+//
+
+* {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+.k-calendar * {
+    box-sizing: content-box;
+}
+
+html, body {
+    background: $base-grey;
+    transition: 0.3s 0.1s opacity;
+    opacity: 1;
+    height: 100%;
+    font-size: $font-size;
+    font-family: $sans;
+    line-height: $line-height;
+    color: $black;
+    min-width: $min-page-width;
+}
+
+[ng-cloak] {
+    opacity: 0;
+    display: block !important;
+
+    .site-header {
+        transform: translate3d(0, -110%, 0);
+    }
+}
+
+.site-wrap {
+    min-height: 100%;
+    margin-bottom: -49px;
+
+    &:after {
+        content: "";
+        display: block;
+    }
+
+    &.authenticated {
+        margin-bottom: -338px;
+  }
+}
+
+img {
+    max-width: 100%;
+    height: auto !important;
+
+    &.with-border {
+        border-radius: $border-radius;
+        border: 1px solid $grey;
+  }
+}
+
+iframe {
+    border: none;
+    max-width: 100%;
+    margin: 0 auto;
+    display: block;
+}
+
+// Fix for images in firefox
+@-moz-document url-prefix() {
+
+    img {
+        width: 100%;
+    }
+}
+
+
+ul, ol {
+    padding: 0;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+
+    &.with-bullet {
+        margin-bottom: 1.5rem;
+
+        li {
+            list-style: circle;
+            list-style-position: inside;
+            margin-bottom: 0.3rem;
+        }
+    }
+
+    &.with-btmborder {
+
+        li {
+            border-bottom: 1px solid $base-grey;
+            padding: 6px 0;
+
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+    }
+}
+
+ol {
+    list-style-position: inside;
+}
+
+hr {
+    border-top: none;
+    border-bottom: 1px solid $base-grey;
+    margin: ($margin*1.5) 0;
+    border-left: none;
+    border-right: none;
+
+    &.small {
+        margin: 8px 0;
+    }
+
+    &.sidebar-hr {
+        margin: ($margin*1.5) (-$padding);
+    }
+}
