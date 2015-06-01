@@ -1568,7 +1568,9 @@ body, html {
 
 .wrap {
   margin: 0 auto;
-  width: 1000px; }
+  width: 970px;
+  min-width: none;
+  max-width: 2000px; }
 
 .site-header {
   background: white;
@@ -1618,7 +1620,7 @@ body, html {
         background: none;
         color: #444444; }
 
-.language-eng, .language-sv {
+.language, .language {
   position: relative;
   top: 4px; }
 
@@ -1741,7 +1743,9 @@ td {
   border-right: 1px solid #e5e9ec; }
 
 .section {
-  padding: 120px 0; }
+  padding: 80px 0; }
+  .section.small {
+    padding: 30px; }
   .section.grey {
     background: #f4f5f7; }
 
@@ -1749,13 +1753,29 @@ td {
   margin-top: 60px; }
 
 .site-footer {
-  background: #363636;
+  background: #2e2e2e;
   padding: 60px 70px 40px; }
   .site-footer .footer-link {
     font-weight: 600;
     color: #5495c0;
-    margin-left: 50px;
+    margin-right: 50px;
     display: inline-block;
-    margin-top: 5px; }
+    margin-top: 5px;
+    font-size: 14px; }
     .site-footer .footer-link:hover {
       color: white; }
+  .site-footer h4 {
+    font-size: 14px; }
+  .site-footer input[type="text"] {
+    border: none; }
+
+.footer-signup {
+  background: #363636;
+  padding: 40px 0; }
+  .footer-signup h3 {
+    color: white;
+    margin-top: 12px !important; }
+
+.about-card {
+  background-color: #fff;
+  padding: 30px 40px 20px; }

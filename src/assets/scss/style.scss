@@ -68,7 +68,9 @@ body, html {
 
 .wrap {
     margin: 0 auto;
-    width: 1000px;
+    width: 970px;
+    min-width: none;
+    max-width: 2000px;
 }
 
 // Site header
@@ -139,8 +141,8 @@ $header-height: 80px;
     }
 }
 
-.language-eng,
-.language-sv {
+.language,
+.language {
     position: relative;
     top: 4px;
 }
@@ -300,7 +302,9 @@ td {
 // Layout
 
 .section {
-    padding: 120px 0;
+    padding: 80px 0;
+
+    &.small { padding: 30px; }
 
     &.grey { background: $light-grey; }
 }
@@ -313,18 +317,45 @@ td {
 // Footer
 
 .site-footer {
-    background: $footer-black;
+    background: darken($footer-black, 3%);
     padding: 60px 70px 40px;
 
     .footer-link {
         font-weight: $semi-bold;
         color: $light-blue;
-        margin-left: 50px;
+        margin-right: 50px;
         display: inline-block;
         margin-top: 5px;
+        font-size: $font-size-medium;
 
         &:hover {
             color: $white;
         }
     }
+
+    h4 {
+        font-size: $font-size-medium;
+    }
+
+    input[type="text"] {
+        border: none;
+    }
+}
+
+.footer-signup {
+    background: $footer-black;
+    padding: 40px 0;
+
+    h3 {
+        color: $white;
+        margin-top: 12px!important;
+    }
+}
+
+
+// About
+
+.about-card {
+    background-color: #fff;
+    padding: 30px 40px 20px;
 }
