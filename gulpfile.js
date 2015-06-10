@@ -168,6 +168,7 @@ gulp.task('serve:dev', ['styles', 'jekyll:dev'], function () {
     bs = browserSync({
         notify: true,
         // tunnel: '',
+        port: 8080,
         server: {
             baseDir: 'serve'
         }

@@ -64,22 +64,30 @@
 body, html {
     background: $white;
     min-height: 100%;
+    min-width: 0;
 }
 
 .wrap {
     margin: 0 auto;
-    width: 970px;
-    min-width: none;
+    min-width: 0;
     max-width: 2000px;
+    width: 970px;
+
+    @media (max-width: 1100px) { width: 85%; }
+    @media (max-width: 800px) { width: 100%; padding: 0 40px; }
 }
 
 // Site header
 
-$header-height: 80px;
+$header-height: 70px;
 
 .site-header {
     background: $white;
     height: $header-height;
+    position: fixed;
+    z-index: 10000;
+    width: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .site-logo {
@@ -97,10 +105,7 @@ $header-height: 80px;
 }
 
 .site-nav, .secondary-nav {
-
-    li {
-        display: inline-block;
-    }
+    li { display: inline-block; }
 }
 
 .site-nav {
@@ -147,23 +152,108 @@ $header-height: 80px;
     top: 4px;
 }
 
+.mobile-nav-toggle {
+    display: none;
+}
+
+// Mobile nav
+@media (max-width: 1000px) {
+
+    .nav-wrap {
+        display: none;
+        margin-top: 80px;
+        border-top: 1px solid $base-grey;
+    }
+
+    .mobile-nav-toggle {
+        position: absolute;
+        top: 22px;
+        right: 30px;
+        display: inline-block;
+        padding: 0 10px;
+        font-size: 20px;
+    }
+
+    // Modify nav
+    .site-header { height: auto; min-height: 70px; }
+
+    .site-nav, .secondary-nav {
+        li { display: block; }
+    }
+
+    .site-nav-link:not(.btn),
+    .site-nav-link:not(.btn):visited,
+    .site-nav-link {
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px solid $base-grey;
+        display: block;
+    }
+
+    .secondary-nav {
+        position: static;
+
+        ul {
+            text-align: center!important;
+            padding-bottom: 20px;
+        }
+
+        .site-nav-link {
+            display: inline-block;
+            margin-left: 0;
+        }
+    }
+}
+
 
 // Hero
 
 .hero {
     background: $blue;
     background: linear-gradient(135deg, $blue 0%,$blue 50%, darken($blue, 2%) 50%, darken($blue, 2%) 100%);
-    padding: 130px 0 0;
+    padding: 200px 0 130px;
     color: $white;
     position: relative;
     overflow: hidden;
 
-    &.page { padding: 130px 0; }
+    @media (max-width: 800px) { padding: 100px 0 0; }
+
+    &.page { padding: 200px 0 130px; }
+
+    &.contact {
+        background: url("../images/map.png") center;
+        background-size: cover;
+
+        &:after {
+            content: '';
+            background: rgba($blue, .75);
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+        }
+
+        .row, p, img, h2 { position: relative; z-index: 1; }
+    }
+
+    &.features {
+        background: url("../images/features-bg.jpg") center;
+        background-size: cover;
+
+        &:after {
+            content: '';
+            background: rgba($blue, .9);
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+        }
+
+        .row, p, img, h2 { position: relative; z-index: 1; }
+    }
 
     &.home {
-        background: url("http://static.pexels.com/wp-content/uploads/2014/07/evening-galaxy-mountains-1901.jpg");
+        background: url("../images/start-bg.jpg");
         background-size: cover;
-        min-height: 650px;
+        min-height: 720px;
+
+        @media (max-width: 800px) { min-height: 370px; }
 
         &:after {
             content: '';
@@ -180,7 +270,8 @@ $header-height: 80px;
             left: 0;
             margin: 0 auto;
             bottom: -230px;
-            width: 60%;
+            width: 860px;
+            padding: 0 20px;
         }
     }
 }
@@ -217,6 +308,14 @@ $header-height: 80px;
     }
 }
 
+.btn-group-connected .btn { background: none; width: 50%; }
+
+@media (max-width: 800px) {
+    .btn + .btn { margin-left: 0; margin-top: 24px; }
+
+    .btn { display: block; }
+}
+
 // Typography
 
 h1, h2, h3, h4, h5 {
@@ -227,6 +326,10 @@ h2 {
     font-size: 36px;
     font-weight: 400;
     line-height: 1.3;
+
+    @media (max-width: 800px) {
+        font-size: 24px;
+    }
 }
 
 h3 {
@@ -238,6 +341,10 @@ h3 {
     font-size: 50px;
     font-weight: 400;
     line-height: 1.2;
+
+    @media (max-width: 800px) {
+        font-size: 30px;
+    }
 }
 
 .site-heading-ingress {
@@ -290,12 +397,20 @@ th {
     font-weight: $semi-bold;
     border-bottom: 1px solid $base-grey;
     border-right: 1px solid $base-grey;
+
+    @media (max-width: 800px) {
+        padding: 10px;
+    }
 }
 
 td {
     padding: 12px 30px;
     border-bottom: 1px solid $base-grey;
     border-right: 1px solid $base-grey;
+
+    @media (max-width: 800px) {
+        padding: 10px;
+    }
 }
 
 
@@ -303,8 +418,22 @@ td {
 
 .section {
     padding: 80px 0;
+    position: relative;
+    overflow: hidden;
 
-    &.small { padding: 30px; }
+    @media (max-width: 800px) {
+            padding: 50px 0;
+        }
+
+    &.small { padding: 30px 0; }
+
+    &.large {
+        padding: 150px 0;
+
+        @media (max-width: 800px) {
+            padding: 50px 0;
+        }
+    }
 
     &.grey { background: $light-grey; }
 }
@@ -313,12 +442,19 @@ td {
     margin-top: 60px;
 }
 
+.features-image {
+    @media (max-width: 800px) {
+        margin-top: 0!important;
+        margin-bottom: 0!important;
+    }
+}
+
 
 // Footer
 
 .site-footer {
     background: darken($footer-black, 3%);
-    padding: 60px 70px 40px;
+    padding: 60px 0 40px;
 
     .footer-link {
         font-weight: $semi-bold;
@@ -327,6 +463,8 @@ td {
         display: inline-block;
         margin-top: 5px;
         font-size: $font-size-medium;
+
+        @media (max-width: 800px) { margin-bottom: 24px; }
 
         &:hover {
             color: $white;
@@ -344,7 +482,7 @@ td {
 
 .footer-signup {
     background: $footer-black;
-    padding: 40px 0;
+    padding: 40px 0 24px;
 
     h3 {
         color: $white;
@@ -355,7 +493,58 @@ td {
 
 // About
 
+.about-people {
+    column-count: 3;
+    -webkit-column-gap: 30px;
+
+    @media (max-width: 800px) {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
+}
+
+.card {
+    background-color: #fff;
+    padding: 40px 40px 20px;
+}
+
 .about-card {
     background-color: #fff;
-    padding: 30px 40px 20px;
+    padding: 40px 40px 20px;
+    position: relative;
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+
+    .col-8 {
+        padding-left: 15px;
+
+        h4 { margin-top: 35px; margin-bottom: 0; }
+    }
+}
+
+.number-box {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border: 2px solid #3d7ba4;
+    text-align: center;
+    border-radius: 20px;
+    line-height: 31px;
+    margin-right: 10px;
+    color: #3d7ba4;
+    font-weight: 700;
+}
+
+// Media queries
+@media (max-width: 800px) {
+    .mobile-center { text-align: center!important; }
+    .mobile-hide { display: none; }
+}
+
+@media (max-width: 1000px) {
+    .tablet-hide { display: none; }
 }

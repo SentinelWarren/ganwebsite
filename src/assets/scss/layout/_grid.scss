@@ -118,3 +118,11 @@
 .row > [class*='col-4']:last-child {
   float: left;
 }
+
+@media (max-width: 800px) {
+  [class*='col-'] {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+}
