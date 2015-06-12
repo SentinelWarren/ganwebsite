@@ -4,9 +4,9 @@ Build with jekyll and gulp.
 
 ## Requirements
 
-- Ruby
-- Jekyll
-- Node
+- Ruby - shipped with mac
+- Jekyll `gem install jekyll`
+- Node `brew install node`
 
 ## Installation
 
