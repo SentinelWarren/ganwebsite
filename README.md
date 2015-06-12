@@ -7,6 +7,7 @@ Build with jekyll and gulp.
 - Ruby - shipped with mac
 - Jekyll `gem install jekyll`
 - Node `brew install node`
+- Gulp - `npm install --global gulp`
 
 ## Installation
 
