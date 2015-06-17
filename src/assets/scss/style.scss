@@ -238,6 +238,10 @@ $header-height: 70px;
         background: url("../images/features-bg.jpg") center;
         background-size: cover;
 
+        &.agencies {
+            background: url("../images/agencies-bg.jpg") center;
+        }
+
         &:after {
             content: '';
             background: rgba($blue, .9);

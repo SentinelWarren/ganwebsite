@@ -1706,6 +1706,8 @@ body, html {
   .hero.features {
     background: url("../images/features-bg.jpg") center;
     background-size: cover; }
+    .hero.features.agencies {
+      background: url("../images/agencies-bg.jpg") center; }
     .hero.features:after {
       content: '';
       background: rgba(61, 123, 164, 0.9);
