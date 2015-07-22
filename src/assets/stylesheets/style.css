@@ -1645,6 +1645,19 @@ body, html {
 .mobile-nav-toggle {
   display: none; }
 
+.hero-sign-up-form {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px 20px 4px;
+  border-radius: 3px; }
+  .hero-sign-up-form input[type="text"] {
+    border: 1px solid white;
+    box-shadow: none; }
+    .hero-sign-up-form input[type="text"]:focus {
+      border: 1px solid #444444; }
+  .hero-sign-up-form input[type="submit"] {
+    width: 100%;
+    margin-bottom: 16px; }
+
 @media (max-width: 1200px) {
   .nav-wrap {
     display: none;
