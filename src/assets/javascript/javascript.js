@@ -24,6 +24,8 @@ $( document ).ready(function() {
     calcContacts();
     $('#filter').keyup(calcContacts);
 
+    $('.message-sent').hide();
+
     // Submit contact form
     $('#contactForm').submit(function(event) {
 
@@ -33,7 +35,8 @@ $( document ).ready(function() {
             'name': $('input[name=name]').val(),
             'email': $('input[name=email]').val(),
             'subject': $('input[name=subject]').val(),
-            'message': $('textarea[name=message]').val()
+            'message': $('textarea[name=message]').val(),
+            'confirm': false
         };
 
         // process the form
@@ -50,6 +53,10 @@ $( document ).ready(function() {
 
         // stop the form from submitting the normal way and refreshing the page
         event.preventDefault();
+        // location.reload();
+        $('.form-input').val('');
+        $('.message-sent').show();
+
     });
 
     // Toogle nav
