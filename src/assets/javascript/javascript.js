@@ -64,4 +64,52 @@ $( document ).ready(function() {
         $('.nav-wrap').toggle();
     });
 
+    $('#signupForm').submit(function(e){
+        var valid = true;
+        var email = $('input[name=email]').val();
+        var password = $('input[name=password]').val();
+        var password2 = $('input[name=password2]').val();
+
+        if(email === '') {
+            $('#email_error').html('This field is required.');
+            valid = false;
+        }
+        if(password === '') {
+            $('#password_error').html('This field is required');
+            valid = false;
+        }
+        if(password != password2) {
+            $('#password_error').html('Passwords does not match');
+            valid = false;
+        }
+
+        if(valid === true){
+            var formData = {
+                'email': email,
+                'password': password,
+                'signup_code': 'tPy37ktV'
+            };
+
+            $.ajax({
+                type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
+                // url         : 'https://api.getanewsletter.com/v3/signup_campaign/', // the url where we want to POST
+                url: 'https://api.getanewsletter.local/v3/signup_campaign/',
+                data        : formData, // our data object
+                dataType    : 'json', // what type of data do we expect back from the server
+                encode      : true
+            })
+            .done(function(data) {
+                alert('sending data to GA')
+                window.location = 'https://api.getanewsletter.com' + data.login_url;
+            })
+            .error(function(data) {
+                console.log(data.responseJSON)
+                if(data.responseJSON && data.responseJSON.email){
+                    $('#email_error').html(data.responseJSON.email);
+                }
+            });
+        }
+        return false;
+    });
+
 });

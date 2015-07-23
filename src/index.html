@@ -8,15 +8,17 @@ title: Start
         <div class="row">
             <h2 class="site-heading">La plataforma de email marketing más sencilla y económica para agencias y pequeños negocios.</h2>
         </div>
-        <form class="row hero-sign-up-form">
+        <form id="signupForm" class="row hero-sign-up-form">
             <div class="col-3">
-                <input autofocus placeholder="Email address" type="text">
+                <input name="email" autofocus placeholder="Email address" type="text">
+                <span id="email_error"></span>
             </div>
             <div class="col-3">
-                <input placeholder="Password" type="text">
+                <input name="password" placeholder="Password" type="password">
+                <span id="password_error"></span>
             </div>
             <div class="col-3">
-                <input placeholder="Repeat password" type="text">
+                <input name="password2" placeholder="Repeat password" type="password">
             </div>
             <div class="col-3">
                 <input class="btn primary block-btn" type="submit" value="Create free account">
