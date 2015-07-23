@@ -1649,14 +1649,16 @@ body, html {
   background: rgba(255, 255, 255, 0.2);
   padding: 20px 20px 4px;
   border-radius: 3px; }
-  .hero-sign-up-form input[type="text"] {
+  .hero-sign-up-form input[type="text"], .hero-sign-up-form input[type="password"] {
     border: 1px solid white;
     box-shadow: none; }
-    .hero-sign-up-form input[type="text"]:focus {
+    .hero-sign-up-form input[type="text"]:focus, .hero-sign-up-form input[type="password"]:focus {
       border: 1px solid #444444; }
   .hero-sign-up-form input[type="submit"] {
     width: 100%;
     margin-bottom: 16px; }
+  .hero-sign-up-form .error {
+    color: white; }
 
 @media (max-width: 1200px) {
   .nav-wrap {
