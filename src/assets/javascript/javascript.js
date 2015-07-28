@@ -93,7 +93,7 @@ $( document ).ready(function() {
             $.ajax({
                 type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
                 // url         : 'https://api.getanewsletter.com/v3/signup_campaign/', // the url where we want to POST
-                url: 'https://api.getanewsletter.local/v3/signup_campaign/',
+                url: 'https://api.getanewsletter.com/v3/signup_campaign/',
                 data        : formData, // our data object
                 dataType    : 'json', // what type of data do we expect back from the server
                 encode      : true
